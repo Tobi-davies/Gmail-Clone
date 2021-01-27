@@ -1,0 +1,32 @@
+.bar {
+  width: 24px;
+  color: #5f6368;
+}
+.logo {
+  display: flex;
+}
+.sidebar {
+  width: 250px;
+  border: 2px solid red;
+}
+.compose-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  width: 145px;
+  border-radius: 25px;
+  border: none;
+  padding: 0 21px 0 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.compose-img {
+  background-image: url("https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png");
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 40px;
+}
