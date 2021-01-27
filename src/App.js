@@ -7,6 +7,7 @@ import Starred from "./components/starred/starred.component";
 import Sent from "./components/sent/sent.component";
 import MessageBox from "./components/message-box/message-box.component";
 import { useState } from "react";
+import TopLine from "./components/top-line/top-line.component";
 
 function App() {
   const [messageBox, showMessageBox] = useState(true);
@@ -19,6 +20,7 @@ function App() {
       <MessageBox showMessage={messageBox} shouldMessageShow={showMessageBox} />
 
       <div className="middle">
+        <TopLine />
         <Switch>
           <Route path="/starred" component={Starred} />
           <Route path="/sent" component={Sent} />

@@ -24,7 +24,7 @@ const MessageBox = ({ showMessage, shouldMessageShow }) => {
           <input type="text" name="text" id="text" placeholder="Subject" />
         </div>
         <div className="message-body">
-          <textarea name="body" id="body" rows="19"></textarea>
+          <textarea name="body" id="body" rows="15"></textarea>
         </div>
 
         <div className="message-bottom">

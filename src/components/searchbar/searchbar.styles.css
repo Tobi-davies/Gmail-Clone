@@ -24,8 +24,8 @@
   /* outline: none; */
   border: none;
 }
-.search-icon,
-.arrow-down {
+.input-field .search-icon,
+.input-field .arrow-down {
   color: #5f6368;
   position: absolute;
 }

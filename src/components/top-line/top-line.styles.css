@@ -1,0 +1,17 @@
+.top-line {
+  position: fixed;
+  /* padding: 10px 20px 10px 15px; */
+  width: 80%;
+  border: 1px solid red;
+  /* top: 100px; */
+}
+/* .top-line .left {
+  display: flex;
+  align-items: center;
+}
+.top-line .left .square {
+  padding-right: 5px;
+}
+.top-line .left .arrow-down {
+  padding-right: 10px;
+} */

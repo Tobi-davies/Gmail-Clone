@@ -67,8 +67,10 @@
 .message-body textarea {
   width: 100%;
   outline: none;
-  border: none;
+  /* border: none; */
   margin-top: 10px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
 }
 
 .message-bottom {
