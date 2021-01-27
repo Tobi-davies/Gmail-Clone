@@ -1,0 +1,24 @@
+.right-column {
+  position: fixed;
+  right: 0;
+  /* width: 52px; */
+  height: 100vh;
+  border-left: 1px solid #f1f3f4;
+}
+.right-column ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.right-column ul li {
+  padding: 15px;
+}
+.right-column ul li span img {
+  width: 20px;
+}
+.dash span {
+  height: 1.5px;
+  width: 22px;
+  background: #f1f3f4;
+  display: block;
+}

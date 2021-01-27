@@ -77,7 +77,7 @@ const SideBar = () => {
           <li>
             <span className="icon">
               <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/label_important_black_20dp.png"
+                src="https://www.gstatic.com/images/icons/material/system/1x/hangout_black_20dp.png"
                 alt="inbox"
               />
             </span>
@@ -153,6 +153,29 @@ const SideBar = () => {
               />
             </span>
             <span className="title">Create new label</span>
+          </li>
+        </ul>
+      </div>
+      <div className="meet">
+        <p>Meet</p>
+        <ul>
+          <li>
+            <span className="icon">
+              <img
+                src="https://www.gstatic.com/images/icons/material/system/1x/videocam_black_20dp.png"
+                alt="inbox"
+              />
+            </span>
+            <span className="title">New meeting</span>
+          </li>
+          <li>
+            <span className="icon">
+              <img
+                src="https://www.gstatic.com/images/icons/material/system/1x/keyboard_black_20dp.png"
+                alt="inbox"
+              />
+            </span>
+            <span className="title">Join a meeting</span>
           </li>
         </ul>
       </div>
