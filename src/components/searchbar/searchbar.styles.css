@@ -1,8 +1,12 @@
 .header {
+  width: 100vw;
   display: flex;
   padding: 7px 20px;
   border-bottom: 1px solid #f1f3f4;
   font-family: "Poppins", sans-serif;
+  position: fixed;
+  z-index: 1;
+  background: #fff;
 }
 
 .logo {

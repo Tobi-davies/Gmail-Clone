@@ -1,6 +1,8 @@
 .right-column {
   position: fixed;
   right: 0;
+  top: 62px;
+
   /* width: 52px; */
   height: 100vh;
   border-left: 1px solid #f1f3f4;

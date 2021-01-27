@@ -1,3 +1,19 @@
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+.middle {
+  position: absolute;
+  top: 63px;
+  left: 260px;
+  right: 51px;
+  border: 1px solid black;
+  /* width: 70%;
+  width: 1045px; */
+}

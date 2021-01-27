@@ -8,6 +8,8 @@
 .sidebar {
   width: 250px;
   position: fixed;
+  left: 0;
+  top: 62px;
   /* border: 2px solid red; */
 }
 .compose-btn {

@@ -1,11 +1,19 @@
 import React from "react";
 import "./sidebar.styles.css";
+import { Link } from "react-router-dom";
 
-const SideBar = () => {
+const SideBar = ({ shouldMessageShow }) => {
+  // const handleClose = () => {
+  //   shouldMessageShow(true);
+  // };
+
+  const handleClick = () => {
+    shouldMessageShow(false);
+  };
   return (
     <div className="sidebar">
       <div className="compose">
-        <button className="compose-btn">
+        <button className="compose-btn" onClick={handleClick}>
           <div className="compose-img"></div>
           <div> Compose</div>
         </button>
@@ -23,15 +31,17 @@ const SideBar = () => {
             <span className="number">661</span>
           </li>
 
-          <li>
-            <span className="icon">
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png"
-                alt="inbox"
-              />
-            </span>
-            <span className="title">Starred</span>
-          </li>
+          <Link to="/starred">
+            <li>
+              <span className="icon">
+                <img
+                  src="https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png"
+                  alt="inbox"
+                />
+              </span>
+              <span className="title">Starred</span>
+            </li>
+          </Link>
 
           <li>
             <span className="icon">
@@ -43,15 +53,17 @@ const SideBar = () => {
             <span className="title">Snoozed</span>
           </li>
 
-          <li>
-            <span className="icon">
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png"
-                alt="inbox"
-              />
-            </span>
-            <span className="title">Sent</span>
-          </li>
+          <Link to="/sent">
+            <li>
+              <span className="icon">
+                <img
+                  src="https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png"
+                  alt="inbox"
+                />
+              </span>
+              <span className="title">Sent</span>
+            </li>
+          </Link>
 
           <li>
             <span className="icon">
