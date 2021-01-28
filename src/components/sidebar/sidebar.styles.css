@@ -50,6 +50,8 @@
   padding: 4px 5px 4px 25px;
   display: flex;
   align-items: center;
+  margin-right: 10px;
+
   /* border: 1px solid black; */
   /* color: #202124; */
 }
@@ -89,4 +91,26 @@
 .meet ul li span img {
   opacity: 0.54;
   margin-right: 17px;
+}
+
+.hangout {
+  border-bottom: 1px solid #f1f3f4;
+  font-family: "Roboto", sans-serif;
+  font-size: 14.5px;
+
+  padding: 14px 10px 14px 25px;
+}
+.hangout p {
+  margin-bottom: 9px;
+}
+.hangout-flex {
+  display: flex;
+  align-items: center;
+}
+.hangout-flex .T,
+.hangout-flex .name {
+  margin-right: 3px;
+}
+.hangout-flex .cross {
+  margin-left: auto;
 }

@@ -191,6 +191,24 @@ const SideBar = ({ shouldMessageShow }) => {
           </li>
         </ul>
       </div>
+      <div className="hangout">
+        <p>Hangouts</p>
+        <div className="hangout-flex">
+          <span className="T">
+            <div>T</div>
+          </span>
+          <span className="name">Tobiloba</span>
+          <span className="arrow-down">
+            <i class="fas fa-sort-down"></i>
+          </span>
+          <span className="cross">
+            <img
+              src="https://www.gstatic.com/images/icons/material/system/1x/add_grey600_24dp.png"
+              alt="icon"
+            />
+          </span>
+        </div>
+      </div>
     </div>
   );
 };

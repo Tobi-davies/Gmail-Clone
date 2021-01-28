@@ -1,17 +1,57 @@
 .top-line {
   position: fixed;
-  /* padding: 10px 20px 10px 15px; */
-  width: 80%;
-  border: 1px solid red;
+  padding: 14px 20px 14px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  right: 53px;
+  left: 260px;
+  background: #fff;
+  border-bottom: 1px solid #f1f3f4;
+  /* width: 75%; */
+  font-family: "Roboto", sans-serif;
+  /* border: 1px solid red; */
   /* top: 100px; */
 }
-/* .top-line .left {
+.top-line .left {
+  /* padding-right: 50%; */
+  display: flex;
+}
+.top-line .left i {
+  color: black;
+  opacity: 0.54;
+}
+.top-line .left .square {
+  padding-right: 10px;
+  padding-left: 15px;
+}
+.top-line .left .arrow-down {
+  padding-right: 28px;
+}
+.top-line .left .reload {
+  padding-right: 28px;
+}
+
+.top-line .right {
   display: flex;
   align-items: center;
 }
-.top-line .left .square {
-  padding-right: 5px;
+.top-line .right .fifty {
+  font-size: 14px;
+  margin-right: 5px;
 }
-.top-line .left .arrow-down {
-  padding-right: 10px;
-} */
+.top-line .right .less,
+.top-line .right .greater {
+  font-size: 0.7rem;
+  opacity: 0.54;
+  padding: 0 15px;
+}
+.top-line .right .keyboard {
+  opacity: 0.54;
+  padding-left: 15px;
+}
+.top-line .right .arrow-down {
+  opacity: 0.54;
+  font-size: 0.8rem;
+  padding-left: 8px;
+}

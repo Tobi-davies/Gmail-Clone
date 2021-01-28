@@ -65,14 +65,14 @@ const Starred = () => {
       facilisi morbi tempus iaculis urna id. Sit amet aliquam id diam. Pharetra
       massa massa ultricies mi. Condimentum id venenatis a condimentum vitae
       sapien pellentesque. Egestas egestas fringilla phasellus faucibus
-      {/* scelerisque. Feugiat pretium nibh ipsum consequat nisl vel pretium.
+      scelerisque. Feugiat pretium nibh ipsum consequat nisl vel pretium.
       Pharetra massa massa ultricies mi quis hendrerit dolor. Urna molestie at
       elementum eu facilisis. Vulputate ut pharetra sit amet aliquam id diam
       maecenas ultricies. Est sit amet facilisis magna etiam tempor orci. Amet
       consectetur adipiscing elit ut aliquam. Dignissim suspendisse in est ante
       in nibh mauris cursus mattis. Volutpat est velit egestas dui id ornare
       arcu odio ut. Tempus iaculis urna id volutpat lacus laoreet non curabitur.
-      Vulputate eu scelerisque felis imperdiet proin fermentum leo vel.
+      {/*Vulputate eu scelerisque felis imperdiet proin fermentum leo vel.
       Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper.
       Tortor at auctor urna nunc id cursus metus aliquam eleifend. Sed arcu non
       odio euismod lacinia. Ridiculus mus mauris vitae ultricies leo integer

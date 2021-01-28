@@ -9,9 +9,19 @@
   background: #fff;
 }
 
-.logo {
-  width: 250px;
+.header .logo {
+  width: 240px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 90px;
 }
+/* .bar,
+.gb_uc {
+  border: 1px solid green;
+  
+} */
 .input-field {
   position: relative;
   margin-right: auto;
@@ -44,10 +54,9 @@
   justify-content: space-between;
   /* border: 1px solid green; */
 }
-/* .marks .grey {
-  color: #5f6368;
-  color: red;
-} */
+.marks .grey {
+  opacity: 0.54;
+}
 .gb_Xe {
   width: 28px;
   /* color: red; */
