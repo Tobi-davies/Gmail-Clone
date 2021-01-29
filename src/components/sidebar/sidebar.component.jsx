@@ -20,17 +20,18 @@ const SideBar = ({ shouldMessageShow }) => {
       </div>
       <div className="options-list">
         <ul>
-          <li>
-            <span className="icon">
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
-                alt="inbox"
-              />
-            </span>
-            <span className="title">Inbox</span>
-            <span className="number">661</span>
-          </li>
-
+          <Link to="/">
+            <li>
+              <span className="icon">
+                <img
+                  src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
+                  alt="inbox"
+                />
+              </span>
+              <span className="title">Inbox</span>
+              <span className="number">661</span>
+            </li>
+          </Link>
           <Link to="/starred">
             <li>
               <span className="icon">

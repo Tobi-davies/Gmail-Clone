@@ -1,0 +1,25 @@
+.sent {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.sent .button1 {
+  background: red;
+}
+
+.sent .button1:focus {
+  background: red;
+}
+/* .sent .red {
+  background: purple;
+} */
+.sent .blank {
+  background: unset;
+}
+.sent .button2:focus {
+  background: blue;
+}
+
+.sent .button3:focus {
+  background: green;
+}

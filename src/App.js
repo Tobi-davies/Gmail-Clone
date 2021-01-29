@@ -8,6 +8,7 @@ import Sent from "./components/sent/sent.component";
 import MessageBox from "./components/message-box/message-box.component";
 import { useState } from "react";
 import TopLine from "./components/top-line/top-line.component";
+import InboxContent from "./components/inbox-content/inbox-content.component";
 
 function App() {
   const [messageBox, showMessageBox] = useState(true);
@@ -22,6 +23,7 @@ function App() {
       <div className="middle">
         <TopLine />
         <Switch>
+          <Route exact path="/" component={InboxContent} />
           <Route path="/starred" component={Starred} />
           <Route path="/sent" component={Sent} />
         </Switch>
