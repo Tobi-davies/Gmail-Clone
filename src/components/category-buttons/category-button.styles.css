@@ -1,5 +1,6 @@
 .category-btn {
   display: flex;
+  border-bottom: 1px solid #f1f3f4;
 }
 
 .category-btn .button {
@@ -8,14 +9,16 @@
   background-repeat: no-repeat;
   border: none;
   outline: none;
-  color: #5f6368;
+  color: #777b80;
   /* font-family: "Open Sans", sans-serif; */
   font-family: "Roboto", sans-serif;
   font-size: 14.5px;
   font-weight: 600;
   position: relative;
   display: flex;
-  /* padding: 7px; */
+  align-items: center;
+
+  padding: 7px;
   background: #fff;
 
   /* font-weight: 400; */
@@ -25,7 +28,7 @@
 }
 
 .category-btn .btn-img {
-  margin-right: 8px;
+  margin-right: 12px;
 }
 .category-btn .btn-img .dull {
   opacity: 0.55;
@@ -66,18 +69,21 @@
   width: 100%;
   position: absolute;
   bottom: 0;
+  left: 0;
 }
 
 .category-btn .button1 {
   /* background: red; */
   color: #d93025;
+  /* display: flex;
+  align-items: center; */
   /* display: flex; */
 }
 .category-btn .button1 .border-red {
   background: #d93025;
 }
 .category-btn .blank {
-  color: #5f6368 !important;
+  color: #777b80 !important;
 }
 .category-btn .blank .border-red {
   background: unset;
