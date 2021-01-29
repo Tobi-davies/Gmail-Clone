@@ -1,0 +1,27 @@
+.category-btn .button1 {
+  background: red;
+}
+
+.category-btn .button1:focus {
+  background: red;
+}
+/* .sent .red {
+  background: purple;
+} */
+.category-btn .blank {
+  background: unset;
+}
+.category-btn .button2:focus {
+  background: blue;
+}
+
+.category-btn .blue {
+  background: blue;
+}
+
+.category-btn .button3:focus {
+  background: green;
+}
+.category-btn .green {
+  background: green;
+}
