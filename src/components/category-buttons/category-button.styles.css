@@ -1,27 +1,52 @@
-.category-btn .button1 {
-  background: red;
+.category-btn .button {
+  height: 40px;
+  width: 300px;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  color: #5f6368;
 }
 
-.category-btn .button1:focus {
-  background: red;
+.category-btn .button1 {
+  /* background: red; */
+  color: #d93025;
+  border-bottom: 2px solid #d93025;
+
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png");
 }
+
+/* .category-btn .button1:focus {
+  color: red;
+} */
 /* .sent .red {
   background: purple;
 } */
 .category-btn .blank {
-  background: unset;
+  color: unset;
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png");
+  border-bottom: unset;
 }
-.category-btn .button2:focus {
-  background: blue;
+/* .category-btn .button2:focus {
+  color: blue;
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png");
+} */
+
+.category-btn .button2 {
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/people_black_20dp.png");
 }
 
 .category-btn .blue {
-  background: blue;
+  color: #1a73e8;
+
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png");
+  border-bottom: 2px solid #1a73e8;
 }
 
-.category-btn .button3:focus {
-  background: green;
+.category-btn .button3 {
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/local_offer_black_20dp.png");
 }
 .category-btn .green {
-  background: green;
+  color: #188038;
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/local_offer_gm_green700_20dp.png");
+  border-bottom: 2px solid #188038;
 }

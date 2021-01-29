@@ -9,39 +9,40 @@ const CategoryBtn = ({ paginate }) => {
     setRed(true);
     setGreen(false);
     setBlue(false);
+    paginate(1);
   };
 
   const handleChange2 = () => {
     setRed(false);
     setGreen(false);
     setBlue(true);
+    paginate(2);
   };
 
   const handleChange3 = () => {
     setRed(false);
     setGreen(true);
     setBlue(false);
+    paginate(3);
   };
 
   return (
     <div className="category-btn">
       <button
-        className={red ? "button1" : "button1 blank"}
+        className={red ? "button button1" : "button button1 blank"}
         onClick={handleChange1}
-        onClick={() => paginate(1)}
       >
-        TEST1
+        Primary
       </button>
       <button
-        className={blue ? "button2 blue" : "button2 "}
+        className={blue ? "button button2 blue" : "button button2"}
         onClick={handleChange2}
       >
         TEST2
       </button>
       <button
-        className={green ? "button3 green" : "button3 "}
+        className={green ? "button button3 green" : "button3 button"}
         onClick={handleChange3}
-        onClick={() => paginate(3)}
       >
         TEST3
       </button>
