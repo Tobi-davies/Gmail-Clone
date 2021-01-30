@@ -102,9 +102,7 @@ const CategoryBtn = ({ paginate }) => {
           <div className="top">
             <p className="title">Promotions</p>
             <p
-              className={
-                promoVisible ? "new new-social" : "new new-social clear"
-              }
+              className={promoVisible ? "new new-promo" : "new new-promo clear"}
             >
               1 new
             </p>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./inbox-content.styles.css";
 import DATA from "../../data";
 import CategoryBtn from "../category-buttons/category-button.component";
+import MessageTemplate from "../message-template/message-template.component";
 
 const InboxContent = () => {
   const [data] = useState(DATA);
@@ -23,8 +24,8 @@ const InboxContent = () => {
   return (
     <div className="inbox-content">
       <CategoryBtn paginate={paginate} />
-      {currentMessages.map((data) => (
-        <div>{data.name}</div>
+      {currentMessages.map((data, index) => (
+        <MessageTemplate key={index} data={data} />
       ))}
     </div>
   );
