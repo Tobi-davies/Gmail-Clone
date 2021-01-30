@@ -5,7 +5,7 @@ export const addStarred = (star) => ({
   payload: star,
 });
 
-export const removeStarred = (unstar) => ({
-  typE: ShowStarredTypes.REMOVE_STARRED_MESSAGE,
-  payload: unstar,
+export const removeStarred = (star) => ({
+  type: ShowStarredTypes.REMOVE_STARRED_MESSAGE,
+  payload: star,
 });

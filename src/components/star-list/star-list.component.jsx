@@ -1,5 +1,7 @@
 import React from "react";
 import "./star-list.styles.css";
+// import { connect } from "react-redux";
+// import { removeStarred } from "../../redux/starred/starred.actions";
 
 const StarList = ({ starred }) => {
   return (
@@ -35,4 +37,9 @@ const StarList = ({ starred }) => {
   );
 };
 
+// const mapDispatchToProps = (dispatch) => ({
+//   removeStarred: (unstar) => dispatch(removeStarred(unstar)),
+// });
+
+// export default connect(null, mapDispatchToProps)(StarList);
 export default StarList;

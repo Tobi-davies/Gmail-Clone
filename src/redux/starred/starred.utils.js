@@ -17,3 +17,17 @@ export const removeStarredFromList = (starList, starToRemove) => {
 
   return starList;
 };
+
+// export const removeNomineeFromList = (nomineesList, nomineeToRemove) => {
+//   const existingNominee = nomineesList.find(
+//     (nominee) => nominee.imdbID === nomineeToRemove.imdbID
+//   );
+
+//   if (existingNominee) {
+//     return nomineesList.filter(
+//       (nominee) => nominee.imdbID !== nomineeToRemove.imdbID
+//     );
+//   }
+
+//   return nomineesList;
+// };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./message-template.styles.css";
 // import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { addStarred, removeStarred } from "../../redux/starred/starred.actions";
+import { addStarred } from "../../redux/starred/starred.actions";
 
 const MessageTemplate = ({ data, addStarred }) => {
   const [toggle, setToggle] = useState("false");
@@ -13,11 +13,11 @@ const MessageTemplate = ({ data, addStarred }) => {
     // setToggle((prev) => !prev);
     setToggle(!toggle);
 
-    if (toggle === false) {
-      removeStarred(data);
-    } else {
-      addStarred(data);
-    }
+    // if (toggle === false) {
+    //   removeStarred(data);
+    // } else {
+    addStarred(data);
+    // }
     console.log(toggle);
   };
 
@@ -56,7 +56,6 @@ const MessageTemplate = ({ data, addStarred }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addStarred: (star) => dispatch(addStarred(star)),
-  removeStarred: (unstar) => dispatch(removeStarred(unstar)),
 });
 
 export default connect(null, mapDispatchToProps)(MessageTemplate);

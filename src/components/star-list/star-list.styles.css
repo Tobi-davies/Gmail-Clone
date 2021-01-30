@@ -1,7 +1,7 @@
 .star-list {
   display: flex;
   align-items: center;
-  /* padding: 10px 15px; */
+  padding: 10px 15px;
   font-family: "Roboto", sans-serif;
   background: #fff;
   border-bottom: 1px solid #f1f3f4;
