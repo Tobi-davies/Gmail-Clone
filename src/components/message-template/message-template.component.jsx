@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./message-template.styles.css";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { addStarred, removeStarred } from "../../redux/starred/starred.actions";
 
-const MessageTemplate = ({ data, match, history }) => {
-  console.log(match);
+const MessageTemplate = ({ data, addStarred }) => {
+  const [toggle, setToggle] = useState("false");
+  // console.log(match);
 
   const handleClick = () => {
-    history.push("/starred");
+    // history.push("/starred");
+    // setToggle((prev) => !prev);
+    setToggle(!toggle);
+
+    if (toggle === false) {
+      removeStarred(data);
+    } else {
+      addStarred(data);
+    }
+    console.log(toggle);
   };
 
   return (
@@ -14,8 +26,22 @@ const MessageTemplate = ({ data, match, history }) => {
       <span className="square">
         <i className="far fa-square"></i>
       </span>
-      <button className="star" onClick={handleClick}>
-        <i className="far fa-star"></i>
+      <button
+        className={!toggle ? "star star-bg" : "star"}
+        onClick={handleClick}
+      >
+        {!toggle ? (
+          <img
+            src="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png"
+            alt="star"
+          />
+        ) : (
+          <img
+            src="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png"
+            alt="star"
+          />
+        )}
+        {/* <i className="far fa-star"></i> */}
       </button>
       <p className="message-title">{data.name}</p>
       <p className="message-body">
@@ -28,4 +54,9 @@ const MessageTemplate = ({ data, match, history }) => {
   );
 };
 
-export default withRouter(MessageTemplate);
+const mapDispatchToProps = (dispatch) => ({
+  addStarred: (star) => dispatch(addStarred(star)),
+  removeStarred: (unstar) => dispatch(removeStarred(unstar)),
+});
+
+export default connect(null, mapDispatchToProps)(MessageTemplate);

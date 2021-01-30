@@ -1,13 +1,19 @@
-export const addNomineeToList = (nomineesList, nomineeToAdd) => {
-  const existingNominee = nomineesList.find(
-    (nominee) => nominee.imdbID === nomineeToAdd.imdbID
-  );
+export const addStarToList = (starList, starToAdd) => {
+  const existingList = starList.find((star) => star.id === starToAdd.id);
 
-  if (existingNominee) {
-    return nomineesList.map((nominee) =>
-      nominee.imdbID === nomineeToAdd.imdbID ? nominee : nominee
-    );
+  if (existingList) {
+    return starList.map((star) => (star.id === starToAdd.id ? star : star));
   }
 
-  return [...nomineesList, { ...nomineeToAdd, quantity: 1 }];
+  return [...starList, { ...starToAdd, quantity: 1 }];
+};
+
+export const removeStarredFromList = (starList, starToRemove) => {
+  const existingList = starList.find((star) => star.id === starToRemove.id);
+
+  if (existingList) {
+    return existingList.filter((star) => star.id !== starToRemove.id);
+  }
+
+  return starList;
 };

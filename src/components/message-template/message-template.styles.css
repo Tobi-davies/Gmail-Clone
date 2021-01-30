@@ -21,6 +21,9 @@
   opacity: 0.16;
   margin-right: 13px;
 }
+.message-template .star-bg {
+  opacity: 1 !important;
+}
 .message-template .message-title {
   font-size: 15px;
   width: 250px;
