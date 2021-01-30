@@ -5,6 +5,8 @@ const CategoryBtn = ({ paginate }) => {
   const [red, setRed] = useState(true);
   const [green, setGreen] = useState(false);
   const [blue, setBlue] = useState(false);
+  const [socialVisible, setSocialVisible] = useState(true);
+  const [promoVisible, setPromoVisible] = useState(true);
   const handleChange1 = () => {
     setRed(true);
     setGreen(false);
@@ -17,6 +19,7 @@ const CategoryBtn = ({ paginate }) => {
     setGreen(false);
     setBlue(true);
     paginate(2);
+    setSocialVisible(false);
   };
 
   const handleChange3 = () => {
@@ -24,6 +27,7 @@ const CategoryBtn = ({ paginate }) => {
     setGreen(true);
     setBlue(false);
     paginate(3);
+    setPromoVisible(false);
   };
 
   return (
@@ -65,9 +69,17 @@ const CategoryBtn = ({ paginate }) => {
         <div className="btn-info">
           <div className="top">
             <p className="title">Social</p>
-            <p className="new new-social">2 new</p>
+            <p
+              className={
+                socialVisible ? "new new-social" : "new new-social disappear"
+              }
+            >
+              2 new
+            </p>
           </div>
-          <div className="bottom">Twitter, Facebook</div>
+          <div className={socialVisible ? "bottom" : "new bottom disappear"}>
+            Twitter, LinkedIn
+          </div>
         </div>
         <div className="border-blue"></div>
       </button>
@@ -86,7 +98,21 @@ const CategoryBtn = ({ paginate }) => {
             />
           )}
         </div>
-        <p className="title">Promotions</p>
+        <div className="btn-info">
+          <div className="top">
+            <p className="title">Promotions</p>
+            <p
+              className={
+                promoVisible ? "new new-social" : "new new-social clear"
+              }
+            >
+              1 new
+            </p>
+          </div>
+          <div className={promoVisible ? "bottom" : "new bottom clear"}>
+            Udemy
+          </div>
+        </div>
         <div className="border-green"></div>
       </button>
     </div>
