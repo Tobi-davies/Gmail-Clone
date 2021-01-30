@@ -1,6 +1,33 @@
 .message-template {
-  /* white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; */
   display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-family: "Roboto", sans-serif;
+  border-bottom: 1px solid #f1f3f4;
+}
+.message-template .square {
+  opacity: 0.16;
+  margin-right: 13px;
+  font-size: 1.2rem;
+}
+.message-template .star {
+  background: none;
+  outline: none;
+  border: none;
+  /* height: 21px; */
+  font-size: 1rem;
+  opacity: 0.16;
+  margin-right: 13px;
+}
+.message-template .message-title {
+  font-size: 15px;
+}
+.message-template .message-body {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.message-template .date {
+  margin-left: auto;
 }

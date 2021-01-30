@@ -3,7 +3,7 @@
   height: 468px;
   /* border: 1px solid green; */
   background: #fff;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   right: 67px;
   bottom: 0;
