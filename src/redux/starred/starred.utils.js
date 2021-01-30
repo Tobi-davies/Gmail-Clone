@@ -12,7 +12,7 @@ export const removeStarredFromList = (starList, starToRemove) => {
   const existingList = starList.find((star) => star.id === starToRemove.id);
 
   if (existingList) {
-    return existingList.filter((star) => star.id !== starToRemove.id);
+    return starList.filter((star) => star.id !== starToRemove.id);
   }
 
   return starList;
