@@ -8,12 +8,27 @@ button {
   outline: none;
   cursor: pointer;
 }
+/* body {
+  overflow: hidden;
+} */
 .middle {
   position: absolute;
   top: 63px;
   left: 260px;
-  right: 51px;
+  right: 53px;
   /* border: 1px solid black; */
   /* width: 70%;
   width: 1045px; */
 }
+
+/* ::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+} */

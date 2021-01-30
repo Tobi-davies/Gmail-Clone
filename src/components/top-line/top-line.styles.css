@@ -9,7 +9,9 @@
   background: #fff;
   border-bottom: 1px solid #f1f3f4;
   /* width: 75%; */
+  /* border-right: 1px solid #f1f3f4; */
   font-family: "Roboto", sans-serif;
+  z-index: 1;
   /* border: 1px solid red; */
   /* top: 100px; */
 }

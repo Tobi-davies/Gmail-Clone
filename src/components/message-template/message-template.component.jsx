@@ -12,7 +12,7 @@ const MessageTemplate = ({ data }) => {
       </button>
       <p className="message-title">{data.name}</p>
       <p className="message-body">
-        ...na him be this oh, I just dey try practice this wrap thing sef... omo
+        na him be this oh, I just dey try practice this wrap thing sef... omo
         oti fe ma stress aye me mehn, like wtf is going on....cant I just blow
         with code
       </p>

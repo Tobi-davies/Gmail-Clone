@@ -3,4 +3,10 @@
   margin-top: 48px;
   display: flex;
   flex-direction: column;
+  /* overflow: scroll; */
+  overflow-y: auto;
 }
+
+/* .inbox-content:hover {
+  overflow-y: scroll !important;
+} */

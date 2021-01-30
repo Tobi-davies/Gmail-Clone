@@ -3,7 +3,9 @@
   align-items: center;
   padding: 10px 15px;
   font-family: "Roboto", sans-serif;
+  background: #fff;
   border-bottom: 1px solid #f1f3f4;
+  /* border-right: 1px solid #f1f3f4; */
 }
 .message-template .square {
   opacity: 0.16;
@@ -21,13 +23,18 @@
 }
 .message-template .message-title {
   font-size: 15px;
+  width: 250px;
+  width: 22%;
+  /* border: 1px solid green; */
 }
 .message-template .message-body {
-  width: 80%;
+  width: 63%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
 }
 .message-template .date {
   margin-left: auto;
+  font-size: 12px;
 }
