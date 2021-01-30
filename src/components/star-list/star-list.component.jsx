@@ -1,15 +1,15 @@
 import React from "react";
 import "./star-list.styles.css";
-// import { connect } from "react-redux";
-// import { removeStarred } from "../../redux/starred/starred.actions";
+import { connect } from "react-redux";
+import { removeStarred } from "../../redux/starred/starred.actions";
 
-const StarList = ({ starred }) => {
+const StarList = ({ starred, removeStarred }) => {
   return (
     <div className="star-list">
       <span className="square">
         <i className="far fa-square"></i>
       </span>
-      <button className="star">
+      <button className="star" onClick={() => removeStarred(starred)}>
         {/* {!toggle ? (
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png"
@@ -37,9 +37,8 @@ const StarList = ({ starred }) => {
   );
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   removeStarred: (unstar) => dispatch(removeStarred(unstar)),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  removeStarred: (unstar) => dispatch(removeStarred(unstar)),
+});
 
-// export default connect(null, mapDispatchToProps)(StarList);
-export default StarList;
+export default connect(null, mapDispatchToProps)(StarList);
