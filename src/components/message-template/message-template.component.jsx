@@ -2,16 +2,16 @@ import React from "react";
 import "./message-template.styles.css";
 import { withRouter } from "react-router-dom";
 
-const MessageTemplate = ({ data, history }) => {
-  console.log(history);
+const MessageTemplate = ({ data, match, history }) => {
+  console.log(match);
 
   return (
     <div className="message-template">
       <span className="square">
-        <i class="far fa-square"></i>
+        <i className="far fa-square"></i>
       </span>
-      <button className="star">
-        <i class="far fa-star"></i>
+      <button className="star" onClick={() => history.push("/starred")}>
+        <i className="far fa-star"></i>
       </button>
       <p className="message-title">{data.name}</p>
       <p className="message-body">

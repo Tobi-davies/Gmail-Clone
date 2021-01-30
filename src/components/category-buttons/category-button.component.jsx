@@ -38,7 +38,10 @@ const CategoryBtn = ({ paginate }) => {
       >
         <div className="btn-img">
           {red ? (
-            <img src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png" />
+            <img
+              src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
+              alt="img"
+            />
           ) : (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
@@ -56,7 +59,10 @@ const CategoryBtn = ({ paginate }) => {
       >
         <div className="btn-img">
           {blue ? (
-            <img src="https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png" />
+            <img
+              src="https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png"
+              alt="img"
+            />
           ) : (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/people_black_20dp.png"
@@ -89,7 +95,10 @@ const CategoryBtn = ({ paginate }) => {
       >
         <div className="btn-img">
           {green ? (
-            <img src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_gm_green700_20dp.png" />
+            <img
+              src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_gm_green700_20dp.png"
+              alt="img"
+            />
           ) : (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_black_20dp.png"
