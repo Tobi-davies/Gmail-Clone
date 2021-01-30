@@ -23,9 +23,6 @@
 
   /* font-weight: 400; */
 }
-.category-btn .button:hover {
-  background-color: rgb(241, 241, 241);
-}
 
 .category-btn .btn-img {
   margin-right: 12px;
@@ -97,23 +94,34 @@
   background: unset;
 }
 
-/* .category-btn .button1:focus {
-  color: red;
-} */
-/* .sent .red {
-  background: purple;
-} */
-.category-btn .blank {
-  color: unset;
+/* .category-btn .blank {
+  color: yellow;
   border-bottom: unset;
-}
+} */
+
 /* .category-btn .button2:focus {
   color: blue;
   background-image: url("https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png");
 } */
 
-/* .category-btn .button2 {
-} */
+/* HOVER STATE */
+
+.category-btn .button:hover {
+  background-color: rgb(241, 241, 241);
+}
+.category-btn .button:hover .btn-img .dull {
+  opacity: 1;
+}
+.category-btn .blank:hover {
+  color: #000 !important;
+}
+.category-btn .button2:hover,
+.category-btn .button3:hover {
+  color: #000;
+}
+.category-btn .blue:hover {
+  color: #1a73e8;
+}
 
 .category-btn .blue {
   color: #1a73e8;
@@ -132,4 +140,7 @@
 
 .category-btn .green .border-green {
   background: #188038;
+}
+.category-btn .green:hover {
+  color: #188038;
 }
