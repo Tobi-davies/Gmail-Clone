@@ -1,7 +1,10 @@
 import React from "react";
 import "./message-template.styles.css";
+import { withRouter } from "react-router-dom";
 
-const MessageTemplate = ({ data }) => {
+const MessageTemplate = ({ data, history }) => {
+  console.log(history);
+
   return (
     <div className="message-template">
       <span className="square">
@@ -21,4 +24,4 @@ const MessageTemplate = ({ data }) => {
   );
 };
 
-export default MessageTemplate;
+export default withRouter(MessageTemplate);
