@@ -4,12 +4,16 @@ import { connect } from "react-redux";
 import { removeStarred } from "../../redux/starred/starred.actions";
 
 const StarList = ({ starred, removeStarred }) => {
+  const handleRemoval = () => {
+    removeStarred(starred);
+  };
+
   return (
     <div className="star-list">
       <span className="square">
         <i className="far fa-square"></i>
       </span>
-      <button className="star" onClick={() => removeStarred(starred)}>
+      <button className="star" onClick={handleRemoval}>
         {/* {!toggle ? (
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png"
