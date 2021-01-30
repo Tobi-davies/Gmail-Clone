@@ -1,10 +1,10 @@
 import { createSelector } from "reselect";
 
-const selectStarred = (state) => state.starredUpdate;
+const selectStarred = (state) => state.starred;
 
 export const selectStarredList = createSelector(
   [selectStarred],
-  (star) => star.list
+  (star) => star.starredUpdate
 );
 
 // export const selectNomineesCount = createSelector(
