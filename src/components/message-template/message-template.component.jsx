@@ -11,7 +11,7 @@ const MessageTemplate = ({ data, addStarred }) => {
   const handleClick = () => {
     // history.push("/starred");
     // setToggle((prev) => !prev);
-    setToggle(!toggle);
+    setToggle((prev) => !prev);
 
     // if (toggle === false) {
     //   removeStarred(data);

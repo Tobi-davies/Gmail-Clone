@@ -1,7 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import "./message-box.styles.css";
 
 const MessageBox = ({ showMessage, shouldMessageShow }) => {
+  const [messageDetail, updateMessageDetail] = useState({
+    to: "",
+    subject: "",
+    body: "",
+  });
+  console.log(messageDetail);
+
+  // const { to, subject, body } = messageDetail;
+
+  const [receiver, setTo] = useState("");
+  const [topic, setSubject] = useState("");
+  const [content, setBody] = useState("");
+
+  const handleTo = (e) => {
+    setTo(e.target.value);
+  };
+
+  const handleSubject = (e) => {
+    setSubject(e.target.value);
+  };
+
+  const handleBody = (e) => {
+    setBody(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateMessageDetail({
+      to: receiver,
+      subject: topic,
+      body: content,
+    });
+  };
+
+  // console.log(receiver);
+
+  // const handleChange = (event) => {
+  //   // const { name, value } = event.target;
+
+  //   updateMessageDetail({ [event.target.name]: event.target.value });
+  // };
+
   const handleClose = () => {
     shouldMessageShow(true);
   };
@@ -11,33 +53,45 @@ const MessageBox = ({ showMessage, shouldMessageShow }) => {
       <div className="new-message-head">
         <p>New Message</p>
         <div className="new-message-icons">
-          <i class="fas fa-minus"></i>
-          <i class="fas fa-expand-alt"></i>
-          <i class="fas fa-times close" onClick={handleClose}></i>
+          <i className="fas fa-minus"></i>
+          <i className="fas fa-expand-alt"></i>
+          <i className="fas fa-times close" onClick={handleClose}></i>
         </div>
       </div>
-      <div className="inner">
+      <form className="inner" onSubmit={handleSubmit}>
         <div className="to">
-          <input type="text" name="text" id="text" placeholder="To" />
+          <input
+            type="text"
+            name="to"
+            onChange={handleTo}
+            placeholder="To"
+            required
+          />
         </div>
         <div className="subject">
           <input
             type="text"
             name="subject"
-            id="subject"
+            onChange={handleSubject}
             placeholder="Subject"
+            required
           />
         </div>
         <div className="message-body">
-          <textarea name="body" id="body" rows="15"></textarea>
+          <textarea
+            name="body"
+            onChange={handleBody}
+            rows="15"
+            required
+          ></textarea>
         </div>
 
         <div className="message-bottom">
           <div className="send-btn">
-            <button>
+            <button type="submit">
               <span className="send">Send</span>
               <span className="send-icon">
-                <i class="fas fa-caret-down"></i>
+                <i className="fas fa-caret-down"></i>
               </span>
             </button>
           </div>
@@ -107,7 +161,7 @@ const MessageBox = ({ showMessage, shouldMessageShow }) => {
             </span>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
