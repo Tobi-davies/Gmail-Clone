@@ -34,7 +34,7 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // updateMessageDetail({
     //   to: receiver,
     //   subject: topic,
@@ -47,11 +47,7 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
       body: content,
     };
 
-    addSent({
-      to: receiver,
-      subject: topic,
-      body: content,
-    });
+    addSent(data);
     console.log(data);
   };
 
