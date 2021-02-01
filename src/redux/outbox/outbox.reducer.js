@@ -10,7 +10,7 @@ const outboxReducer = (state = INITIAL_STATE, action) => {
     case ShowOutboxTypes.SHOW_OUTBOX:
       return {
         ...state,
-        sentMessages: [...state.sentMessages, action.payload],
+        sentMessages: [action.payload, ...state.sentMessages],
       };
 
     default:

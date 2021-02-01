@@ -10,7 +10,7 @@ const starredReducer = (state = INITIAL_STATE, action) => {
     case ShowStarredTypes.SHOW_STARRED:
       return {
         ...state,
-        starredUpdate: addStarToList(state.starredUpdate, action.payload),
+        starredUpdate: addStarToList(action.payload, state.starredUpdate),
       };
 
     case ShowStarredTypes.REMOVE_STARRED_MESSAGE:
