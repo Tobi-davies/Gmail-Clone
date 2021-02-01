@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import "./message-box.styles.css";
+import { connect } from "react-redux";
+import { addSent } from "../../redux/outbox/outbox.actions";
 
-const MessageBox = ({ showMessage, shouldMessageShow }) => {
-  const [messageDetail, updateMessageDetail] = useState({
-    to: "",
-    subject: "",
-    body: "",
-  });
-  console.log(messageDetail);
+const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
+  // const [messageDetail, updateMessageDetail] = useState({
+  //   to: "",
+  //   subject: "",
+  //   body: "",
+  // });
+  // console.log(messageDetail);
 
   // const { to, subject, body } = messageDetail;
 
   const [receiver, setTo] = useState("");
   const [topic, setSubject] = useState("");
   const [content, setBody] = useState("");
+
+  // let first;
+  // let second;
+  // let third;
 
   const handleTo = (e) => {
     setTo(e.target.value);
@@ -29,11 +35,24 @@ const MessageBox = ({ showMessage, shouldMessageShow }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateMessageDetail({
+    // updateMessageDetail({
+    //   to: receiver,
+    //   subject: topic,
+    //   body: content,
+    // });
+
+    const data = {
+      to: receiver,
+      subject: topic,
+      body: content,
+    };
+
+    addSent({
       to: receiver,
       subject: topic,
       body: content,
     });
+    console.log(data);
   };
 
   // console.log(receiver);
@@ -166,4 +185,8 @@ const MessageBox = ({ showMessage, shouldMessageShow }) => {
   );
 };
 
-export default MessageBox;
+const mapDispatchToProps = (dispatch) => ({
+  addSent: (sent) => dispatch(addSent(sent)),
+});
+
+export default connect(null, mapDispatchToProps)(MessageBox);
