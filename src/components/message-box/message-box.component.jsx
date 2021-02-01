@@ -13,6 +13,34 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
 
   // const { to, subject, body } = messageDetail;
 
+  let monthList = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const formatDate = (item) => {
+    if (item < 10) {
+      return (item = `0${item}`);
+    }
+    return item;
+  };
+
+  let today = new Date();
+  let date = formatDate(today.getDate());
+  let month = monthList[today.getMonth()];
+  let timeSent = `${month} ${date}`;
+  console.log(month);
+
   const [receiver, setTo] = useState("");
   const [topic, setSubject] = useState("");
   const [content, setBody] = useState("");
@@ -34,7 +62,7 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     // updateMessageDetail({
     //   to: receiver,
     //   subject: topic,
@@ -45,10 +73,20 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
       to: receiver,
       subject: topic,
       body: content,
+      month: timeSent,
     };
 
     addSent(data);
-    console.log(data);
+
+    // console.log(data);
+
+    if (receiver !== "" && topic !== "" && content !== "") {
+      shouldMessageShow(true);
+    }
+
+    setTo("");
+    setSubject("");
+    setBody("");
   };
 
   // console.log(receiver);
@@ -78,6 +116,7 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
           <input
             type="text"
             name="to"
+            value={receiver}
             onChange={handleTo}
             placeholder="To"
             required
@@ -87,6 +126,7 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
           <input
             type="text"
             name="subject"
+            value={topic}
             onChange={handleSubject}
             placeholder="Subject"
             required
@@ -95,6 +135,7 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
         <div className="message-body">
           <textarea
             name="body"
+            value={content}
             onChange={handleBody}
             rows="15"
             required
