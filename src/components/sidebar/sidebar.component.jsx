@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sidebar.styles.css";
 import { Link } from "react-router-dom";
 
 const SideBar = ({ shouldMessageShow }) => {
+  const [hightlight, setHighlight] = useState("inbox");
   // const handleClose = () => {
   //   shouldMessageShow(true);
   // };
@@ -21,19 +22,32 @@ const SideBar = ({ shouldMessageShow }) => {
       <div className="options-list">
         <ul>
           <Link to="/">
-            <li>
+            <li
+              className={hightlight === "inbox" ? "red-highlight" : ""}
+              onClick={() => setHighlight("inbox")}
+            >
               <span className="icon">
-                <img
-                  src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
-                  alt="inbox"
-                />
+                {hightlight === "inbox" ? (
+                  <img
+                    src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
+                    alt="inbox"
+                  />
+                ) : (
+                  <img
+                    src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
+                    alt="inbox"
+                  />
+                )}
               </span>
               <span className="title">Inbox</span>
               <span className="number">661</span>
             </li>
           </Link>
           <Link to="/starred">
-            <li>
+            <li
+              className={hightlight === "starred" ? "highlight" : ""}
+              onClick={() => setHighlight("starred")}
+            >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png"
@@ -44,7 +58,10 @@ const SideBar = ({ shouldMessageShow }) => {
             </li>
           </Link>
 
-          <li>
+          <li
+            className={hightlight === "snoozed" ? "highlight" : ""}
+            onClick={() => setHighlight("snoozed")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/watch_later_black_20dp.png"
@@ -55,7 +72,10 @@ const SideBar = ({ shouldMessageShow }) => {
           </li>
 
           <Link to="/sent">
-            <li>
+            <li
+              className={hightlight === "sent" ? "highlight" : ""}
+              onClick={() => setHighlight("sent")}
+            >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png"
@@ -66,7 +86,10 @@ const SideBar = ({ shouldMessageShow }) => {
             </li>
           </Link>
 
-          <li>
+          <li
+            className={hightlight === "drafts" ? "highlight" : ""}
+            onClick={() => setHighlight("drafts")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/insert_drive_file_black_20dp.png"
@@ -77,7 +100,10 @@ const SideBar = ({ shouldMessageShow }) => {
             <span className="number">20</span>
           </li>
 
-          <li>
+          <li
+            className={hightlight === "important" ? "highlight" : ""}
+            onClick={() => setHighlight("important")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/label_important_black_20dp.png"
@@ -87,7 +113,10 @@ const SideBar = ({ shouldMessageShow }) => {
             <span className="title">Important</span>
           </li>
 
-          <li>
+          <li
+            className={hightlight === "chats" ? "highlight" : ""}
+            onClick={() => setHighlight("chats")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/hangout_black_20dp.png"
@@ -97,7 +126,10 @@ const SideBar = ({ shouldMessageShow }) => {
             <span className="title">Chats</span>
           </li>
 
-          <li>
+          <li
+            className={hightlight === "scheduled" ? "highlight" : ""}
+            onClick={() => setHighlight("scheduled")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/schedule_send_black_20dp.png"
@@ -107,7 +139,10 @@ const SideBar = ({ shouldMessageShow }) => {
             <span className="title">Scheduled</span>
           </li>
 
-          <li>
+          <li
+            className={hightlight === "all-mail" ? "highlight" : ""}
+            onClick={() => setHighlight("all-mail")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/mail_black_20dp.png"
@@ -117,7 +152,10 @@ const SideBar = ({ shouldMessageShow }) => {
             <span className="title">All Mail</span>
           </li>
 
-          <li>
+          <li
+            className={hightlight === "spam" ? "highlight" : ""}
+            onClick={() => setHighlight("spam")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/report_black_20dp.png"
@@ -128,7 +166,10 @@ const SideBar = ({ shouldMessageShow }) => {
             <span className="number">2</span>
           </li>
 
-          <li>
+          <li
+            className={hightlight === "trash" ? "highlight" : ""}
+            onClick={() => setHighlight("trash")}
+          >
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png"
@@ -138,7 +179,7 @@ const SideBar = ({ shouldMessageShow }) => {
             <span className="title">Trash</span>
           </li>
 
-          <li>
+          {/* <li>
             <span className="icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
@@ -146,9 +187,12 @@ const SideBar = ({ shouldMessageShow }) => {
               />
             </span>
             <span className="title">Create new label</span>
-          </li>
+          </li> */}
 
-          <li>
+          <li
+            className={hightlight === "manage-label" ? "highlight" : ""}
+            onClick={() => setHighlight("manage-label")}
+          >
             <span className="icon manage-icon">
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/settings_black_20dp.png"

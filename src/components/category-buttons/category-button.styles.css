@@ -5,7 +5,7 @@
 
 .category-btn .button {
   height: 50px;
-  width: 280px;
+  width: 250px;
   background-repeat: no-repeat;
   border: none;
   outline: none;
@@ -34,7 +34,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
 }
 
 .category-btn .button .btn-info .top {

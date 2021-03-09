@@ -37,27 +37,53 @@
 .options-list ul {
   font-family: "Roboto", sans-serif;
   font-size: 14.5px;
-  max-height: 200px;
+  max-height: 208px;
   /* border: 1px solid purple; */
   overflow-y: hidden;
   border-bottom: 1px solid #f1f3f4;
+  /* padding-right: 40px; */
 }
 .options-list ul:hover {
   border-top: 1px solid #f1f3f4;
   overflow-y: auto;
 }
 .options-list ul li {
-  padding: 4px 5px 4px 25px;
+  padding: 4px 8px 4px 25px;
   display: flex;
   align-items: center;
   margin-right: 10px;
+  color: #202124;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  cursor: pointer;
 
   /* border: 1px solid black; */
   /* color: #202124; */
 }
+.options-list ul li:hover {
+  background-color: #f1f3f4de;
+}
 /* .options-list ul li span img {
   background-blend-mode: lighten;
 } */
+.red-highlight {
+  color: #cf5951 !important;
+  background: #fceae9;
+  font-weight: 600;
+}
+.red-highlight:hover {
+  background: #fceae9 !important;
+}
+.highlight {
+  /* color: #202124; */
+  font-weight: 600;
+  background-color: #e0e2e2de;
+}
+.highlight:hover {
+  /* color: #202124; */
+  /* font-weight: 600; */
+  background-color: #e0e2e2de !important;
+}
 .options-list ul li span img {
   opacity: 0.54;
   margin-right: 17px;
