@@ -7,6 +7,11 @@ export const selectStarredList = createSelector(
   (star) => star.starredUpdate
 );
 
+export const changeStarColor = createSelector(
+  [selectStarred],
+  (star) => star.starColor
+);
+
 // export const selectNomineesCount = createSelector(
 //   [selectNomineesList],
 //   (list) =>

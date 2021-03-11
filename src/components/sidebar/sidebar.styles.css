@@ -67,7 +67,7 @@
   background-blend-mode: lighten;
 } */
 .red-highlight {
-  color: #cf5951 !important;
+  color: #d93025 !important;
   background: #fceae9;
   font-weight: 600;
 }
@@ -90,6 +90,9 @@
 }
 .number {
   margin-left: auto;
+}
+.red-highlight span img {
+  opacity: 1 !important;
 }
 /* .manage-icon {
   height: 20px;

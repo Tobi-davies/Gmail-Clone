@@ -143,3 +143,19 @@
 .category-btn .green:hover {
   color: #188038;
 }
+
+/* .promotion-title {
+  border: 1px solid blue;
+  width: 80px;
+} */
+
+@media screen and (max-width: 900px) {
+  .promotion-title {
+    /* border: 1px solid blue; */
+    width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* display: none; */
+  }
+}

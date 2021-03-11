@@ -3,6 +3,7 @@ import { addStarToList, removeStarredFromList } from "./starred.utils";
 
 const INITIAL_STATE = {
   starredUpdate: [],
+  starColor: false,
 };
 
 const starredReducer = (state = INITIAL_STATE, action) => {
@@ -11,6 +12,7 @@ const starredReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         starredUpdate: addStarToList(action.payload, state.starredUpdate),
+        starColor: true,
       };
 
     case ShowStarredTypes.REMOVE_STARRED_MESSAGE:
@@ -20,6 +22,7 @@ const starredReducer = (state = INITIAL_STATE, action) => {
           state.starredUpdate,
           action.payload
         ),
+        starColor: false,
       };
 
     default:

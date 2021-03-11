@@ -28,9 +28,13 @@ const SideBar = ({ shouldMessageShow }) => {
             >
               <span className="icon">
                 {hightlight === "inbox" ? (
+                  // <img
+                  //   src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
+                  //   alt="inbox"
+                  // />
                   <img
                     src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
-                    alt="inbox"
+                    alt="img"
                   />
                 ) : (
                   <img

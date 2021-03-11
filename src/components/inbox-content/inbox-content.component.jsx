@@ -4,10 +4,18 @@ import DATA from "../../data";
 import CategoryBtn from "../category-buttons/category-button.component";
 import MessageTemplate from "../message-template/message-template.component";
 
-const InboxContent = () => {
+const InboxContent = ({
+  promoVisible,
+  setPromoVisible,
+  socialVisible,
+  setSocialVisible,
+}) => {
   const [data] = useState(DATA);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageLimit] = useState(15);
+
+  // const [socialVisible, setSocialVisible] = useState(true);
+  // const [promoVisible, setPromoVisible] = useState(true);
 
   const indexOfLastPost = currentPage * pageLimit;
   const indexOfFirstPost = indexOfLastPost - pageLimit;
@@ -23,7 +31,13 @@ const InboxContent = () => {
 
   return (
     <div className="inbox-content">
-      <CategoryBtn paginate={paginate} />
+      <CategoryBtn
+        paginate={paginate}
+        socialVisible={socialVisible}
+        setSocialVisible={setSocialVisible}
+        promoVisible={promoVisible}
+        setPromoVisible={setPromoVisible}
+      />
       {currentMessages.map((data, index) => (
         <MessageTemplate key={index} data={data} />
       ))}
@@ -31,4 +45,4 @@ const InboxContent = () => {
   );
 };
 
-export default InboxContent;
+export default React.memo(InboxContent);

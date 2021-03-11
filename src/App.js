@@ -13,6 +13,9 @@ import InboxContent from "./components/inbox-content/inbox-content.component";
 function App() {
   const [messageBox, showMessageBox] = useState(true);
 
+  const [socialVisible, setSocialVisible] = useState(true);
+  const [promoVisible, setPromoVisible] = useState(true);
+
   return (
     <div className="App">
       <Header />
@@ -23,7 +26,15 @@ function App() {
       <div className="middle">
         <TopLine />
         <Switch>
-          <Route exact path="/" component={InboxContent} />
+          {/* <Route exact path="/" component={InboxContent} /> */}
+          <Route exact path="/">
+            <InboxContent
+              socialVisible={socialVisible}
+              setSocialVisible={setSocialVisible}
+              promoVisible={promoVisible}
+              setPromoVisible={setPromoVisible}
+            />
+          </Route>
           <Route path="/starred" component={Starred} />
           <Route path="/sent" component={Sent} />
         </Switch>

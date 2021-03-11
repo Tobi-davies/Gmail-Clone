@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import "./category-button.styles.css";
 
-const CategoryBtn = ({ paginate }) => {
-  const [red, setRed] = useState(true);
-  const [green, setGreen] = useState(false);
-  const [blue, setBlue] = useState(false);
-  const [socialVisible, setSocialVisible] = useState(true);
-  const [promoVisible, setPromoVisible] = useState(true);
+const CategoryBtn = ({
+  paginate,
+  socialVisible,
+  setSocialVisible,
+  promoVisible,
+  setPromoVisible,
+}) => {
+  const [color, setColor] = useState("red");
+  // const [green, setGreen] = useState(false);
+  // const [blue, setBlue] = useState(false);
+  // const [socialVisible, setSocialVisible] = useState(true);
+  // const [promoVisible, setPromoVisible] = useState(true);
   const handleChange1 = () => {
-    setRed(true);
-    setGreen(false);
-    setBlue(false);
+    setColor("red");
     paginate(1);
   };
 
   const handleChange2 = () => {
-    setRed(false);
-    setGreen(false);
-    setBlue(true);
+    setColor("blue");
     paginate(2);
     setSocialVisible(false);
   };
 
   const handleChange3 = () => {
-    setRed(false);
-    setGreen(true);
-    setBlue(false);
+    setColor("green");
     paginate(3);
     setPromoVisible(false);
   };
@@ -33,11 +33,11 @@ const CategoryBtn = ({ paginate }) => {
   return (
     <div className="category-btn">
       <button
-        className={red ? "button button1" : "button button1 blank"}
+        className={color === "red" ? "button button1" : "button button1 blank"}
         onClick={handleChange1}
       >
         <div className="btn-img">
-          {red ? (
+          {color === "red" ? (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
               alt="img"
@@ -54,11 +54,11 @@ const CategoryBtn = ({ paginate }) => {
         <div className="border-red"></div>
       </button>
       <button
-        className={blue ? "button button2 blue" : "button button2"}
+        className={color === "blue" ? "button button2 blue" : "button button2"}
         onClick={handleChange2}
       >
         <div className="btn-img">
-          {blue ? (
+          {color === "blue" ? (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png"
               alt="img"
@@ -90,11 +90,13 @@ const CategoryBtn = ({ paginate }) => {
         <div className="border-blue"></div>
       </button>
       <button
-        className={green ? "button button3 green" : "button3 button"}
+        className={
+          color === "green" ? "button button3 green" : "button3 button"
+        }
         onClick={handleChange3}
       >
         <div className="btn-img">
-          {green ? (
+          {color === "green" ? (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_gm_green700_20dp.png"
               alt="img"
@@ -109,7 +111,9 @@ const CategoryBtn = ({ paginate }) => {
         </div>
         <div className="btn-info">
           <div className="top">
-            <p className="title">Promotions</p>
+            <p className={promoVisible ? "title promotion-title" : "title"}>
+              Promotions
+            </p>
             <p
               className={promoVisible ? "new new-promo" : "new new-promo clear"}
             >
