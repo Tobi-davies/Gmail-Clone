@@ -24,7 +24,6 @@
   width: 720px;
 }
 .input-field input {
-  
   width: 100%;
 
   height: 48px;
@@ -51,6 +50,7 @@
   align-items: center;
   width: 170px;
   justify-content: space-between;
+  padding-left: 20px;
   /* border: 1px solid green; */
 }
 .marks .grey {
@@ -76,5 +76,21 @@
 @media (max-width: 1200px) {
   .header .input-field {
     width: 55%;
+  }
+}
+
+@media (max-width: 900px) {
+  .header .input-field {
+    width: 48%;
+    /* border: 1px solid green; */
+  }
+  .marks {
+    width: 185px;
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    display: none;
   }
 }

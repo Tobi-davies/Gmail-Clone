@@ -24,3 +24,9 @@
   background: #f1f3f4;
   display: block;
 }
+
+@media (max-width: 800px) {
+  .right-column {
+    display: none;
+  }
+}

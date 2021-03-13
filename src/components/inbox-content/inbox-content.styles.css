@@ -10,3 +10,8 @@
 /* .inbox-content:hover {
   overflow-y: scroll !important;
 } */
+@media (max-width: 650px) {
+  .inbox-content {
+    margin-top: 0;
+  }
+}

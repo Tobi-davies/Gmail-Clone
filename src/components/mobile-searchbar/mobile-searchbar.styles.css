@@ -1,0 +1,59 @@
+.mobile-searchbar {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .mobile-searchbar {
+    display: block;
+    border: 1px solid red;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    z-index: 1;
+  }
+  .mobile-searchbar .mobile-input-field {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    position: relative;
+
+    /* height: auto; */
+  }
+  .mobile-searchbar .mobile-input-field input {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #bebfc0;
+    padding-left: 70px;
+  }
+  .mobile-searchbar .mobile-input-field .mobile-bar {
+    width: 24px;
+    color: #5f6368;
+    position: absolute;
+    top: 20%;
+    left: 4%;
+    /* z-index: 2; */
+  }
+  .mobile-searchbar .mobile-input-field .mobile-T {
+    position: absolute;
+    right: 3%;
+    top: 17%;
+    background: rgb(23, 190, 182);
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+}
+
+.T {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}

@@ -57,3 +57,20 @@
   font-size: 0.8rem;
   padding-left: 8px;
 }
+
+@media (max-width: 850px) {
+  .top-line {
+    left: 230px;
+  }
+}
+@media (max-width: 700px) {
+  .top-line {
+    /* display: none; */
+    right: 0;
+  }
+}
+@media (max-width: 650px) {
+  .top-line {
+    display: none;
+  }
+}

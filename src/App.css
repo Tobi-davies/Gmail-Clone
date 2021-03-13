@@ -21,6 +21,24 @@ button {
   width: 1045px; */
 }
 
+@media (max-width: 850px) {
+  .middle {
+    left: 230px;
+  }
+}
+@media (max-width: 800px) {
+  .middle {
+    right: 0;
+  }
+}
+@media (max-width: 650px) {
+  .middle {
+    /* right: 0; */
+    left: 0;
+    /* top: 9vh; */
+  }
+}
+
 /* ::-webkit-scrollbar {
   display: none;
 }

@@ -143,3 +143,15 @@
 .hangout-flex .cross {
   margin-left: auto;
 }
+
+@media (max-width: 850px) {
+  .sidebar {
+    width: 220px;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
+    display: none;
+  }
+}

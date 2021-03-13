@@ -152,10 +152,16 @@
 @media screen and (max-width: 900px) {
   .promotion-title {
     /* border: 1px solid blue; */
-    width: 60px;
+    width: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
 
     /* display: none; */
+  }
+}
+
+@media (max-width: 700px) {
+  .category-btn {
+    display: none;
   }
 }

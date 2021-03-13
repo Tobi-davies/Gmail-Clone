@@ -1,12 +1,28 @@
 import React, { useState } from "react";
 import "./category-button.styles.css";
+import {
+  changePage,
+  hidePromo,
+  hideSocial,
+} from "../../redux/paginate/paginate.actions";
+import {
+  selectPromo,
+  selectSocial,
+} from "../../redux/paginate/paginate.selectors";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 const CategoryBtn = ({
-  paginate,
-  socialVisible,
-  setSocialVisible,
-  promoVisible,
-  setPromoVisible,
+  // paginate,
+  changePage,
+  hidePromo,
+  hideSocial,
+  selectPromo,
+  selectSocial,
+  // socialVisible,
+  // setSocialVisible,
+  // promoVisible,
+  // setPromoVisible,
 }) => {
   const [color, setColor] = useState("red");
   // const [green, setGreen] = useState(false);
@@ -15,19 +31,24 @@ const CategoryBtn = ({
   // const [promoVisible, setPromoVisible] = useState(true);
   const handleChange1 = () => {
     setColor("red");
-    paginate(1);
+    // paginate(1);
+    changePage(1);
   };
 
   const handleChange2 = () => {
     setColor("blue");
-    paginate(2);
-    setSocialVisible(false);
+    // paginate(2);
+    changePage(2);
+    hideSocial();
+    // setSocialVisible(false);
   };
 
   const handleChange3 = () => {
     setColor("green");
-    paginate(3);
-    setPromoVisible(false);
+    // paginate(3);
+    changePage(3);
+    hidePromo();
+    // setPromoVisible(false);
   };
 
   return (
@@ -77,13 +98,13 @@ const CategoryBtn = ({
             <p className="title">Social</p>
             <p
               className={
-                socialVisible ? "new new-social" : "new new-social disappear"
+                selectSocial ? "new new-social" : "new new-social disappear"
               }
             >
               2 new
             </p>
           </div>
-          <div className={socialVisible ? "bottom" : "new bottom disappear"}>
+          <div className={selectSocial ? "bottom" : "new bottom disappear"}>
             Twitter, LinkedIn
           </div>
         </div>
@@ -111,16 +132,16 @@ const CategoryBtn = ({
         </div>
         <div className="btn-info">
           <div className="top">
-            <p className={promoVisible ? "title promotion-title" : "title"}>
+            <p className={selectPromo ? "title promotion-title" : "title"}>
               Promotions
             </p>
             <p
-              className={promoVisible ? "new new-promo" : "new new-promo clear"}
+              className={selectPromo ? "new new-promo" : "new new-promo clear"}
             >
               1 new
             </p>
           </div>
-          <div className={promoVisible ? "bottom" : "new bottom clear"}>
+          <div className={selectPromo ? "bottom" : "new bottom clear"}>
             Udemy
           </div>
         </div>
@@ -130,7 +151,17 @@ const CategoryBtn = ({
   );
 };
 
-export default CategoryBtn;
+const mapStateToProps = createStructuredSelector({
+  selectSocial,
+  selectPromo,
+});
+const mapDispatchToProps = (dispatch) => ({
+  changePage: (value) => dispatch(changePage(value)),
+  hideSocial: () => dispatch(hideSocial()),
+  hidePromo: () => dispatch(hidePromo()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryBtn);
 
 // const Pagination = ({ pageLimit, newLength, paginate, currentPage }) => {
 //   const pageNumbers = [];
