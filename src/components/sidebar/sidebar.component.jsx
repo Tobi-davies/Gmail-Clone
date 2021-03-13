@@ -248,7 +248,7 @@ const SideBar = ({ shouldMessageShow }) => {
           </span>
           <span className="name">Tobiloba</span>
           <span className="arrow-down">
-            <i class="fas fa-sort-down"></i>
+            <i className="fas fa-sort-down"></i>
           </span>
           <span className="cross">
             <img

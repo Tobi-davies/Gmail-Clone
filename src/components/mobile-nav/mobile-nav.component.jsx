@@ -283,7 +283,7 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
             <li>
               <span>
                 <svg
-                  class="Xy grey mobile-grey"
+                  className="Xy grey mobile-grey"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"

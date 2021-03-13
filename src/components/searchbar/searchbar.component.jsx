@@ -15,9 +15,9 @@ const Header = () => {
           <img
             className="gb_uc"
             src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png"
-            srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png 2x "
-            alt="logo"
-            aria-hidden="true"
+            // srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png 2x "
+            // alt="logo"
+            // aria-hidden="true"
             // style="width:109px;height:40px"
           />
         </div>
@@ -25,10 +25,10 @@ const Header = () => {
       <div className="input-field">
         <input type="text" name="input" id="input" />
         <span className="search-icon">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </span>
         <span className="arrow-down">
-          <i class="fas fa-sort-down"></i>
+          <i className="fas fa-sort-down"></i>
         </span>
       </div>
       <div className="marks">
@@ -48,7 +48,7 @@ const Header = () => {
         </span>
         <span>
           <svg
-            class="Xy grey"
+            className="Xy grey"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
