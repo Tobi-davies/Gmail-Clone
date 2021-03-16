@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import SideBar from "./components/sidebar/sidebar.component";
 import Header from "./components/searchbar/searchbar.component";
 import RightColumn from "./components/right-column/right-column.component";
@@ -11,42 +11,43 @@ import TopLine from "./components/top-line/top-line.component";
 import InboxContent from "./components/inbox-content/inbox-content.component";
 import MobileNav from "./components/mobile-nav/mobile-nav.component";
 import MobileSearchbar from "./components/mobile-searchbar/mobile-searchbar.component";
+import ComposeBtn from "./components/composeBtn/composeBtn.component";
+import ComposeMessage from "./components/composeMessage/composeMessage.component";
 
-function App() {
+function App({ location }) {
   const [messageBox, showMessageBox] = useState(true);
 
-  // const [socialVisible, setSocialVisible] = useState(true);
-  // const [promoVisible, setPromoVisible] = useState(true);
   const [mobileNav, showMobileNav] = useState(false);
 
   return (
-    <div className="App">
+    <div className={mobileNav ? "App Hide-app" : App}>
       <Header />
       <SideBar shouldMessageShow={showMessageBox} />
       <RightColumn />
       <MessageBox showMessage={messageBox} shouldMessageShow={showMessageBox} />
       <MobileNav mobileNav={mobileNav} showMobileNav={showMobileNav} />
-      <MobileSearchbar showMobileNav={showMobileNav} />
+
       <div className="middle">
         <TopLine />
+        {location.pathname !== "/compose" ? (
+          <MobileSearchbar showMobileNav={showMobileNav} />
+        ) : (
+          ""
+        )}
 
         <Switch>
-          {/* <Route exact path="/" component={InboxContent} /> */}
-
           <Route exact path="/">
-            <InboxContent
-            // socialVisible={socialVisible}
-            // setSocialVisible={setSocialVisible}
-            // promoVisible={promoVisible}
-            // setPromoVisible={setPromoVisible}
-            />
+            <InboxContent />
           </Route>
           <Route path="/starred" component={Starred} />
           <Route path="/sent" component={Sent} />
         </Switch>
       </div>
+      <Route path="/compose" component={ComposeMessage} />
+
+      {location.pathname !== "/compose" ? <ComposeBtn /> : ""}
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

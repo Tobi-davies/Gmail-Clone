@@ -11,7 +11,6 @@
 
 .header .logo {
   width: 240px;
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,12 +24,14 @@
 }
 .input-field input {
   width: 100%;
-
+  padding-left: 60px;
   height: 48px;
   background: #f1f3f4;
   border-radius: 9px;
-  /* outline: none; */
   border: none;
+}
+.input-field input[type="text"] {
+  font-size: 0.9rem;
 }
 .input-field .search-icon,
 .input-field .arrow-down {
@@ -51,14 +52,12 @@
   width: 170px;
   justify-content: space-between;
   padding-left: 20px;
-  /* border: 1px solid green; */
 }
 .marks .grey {
   opacity: 0.54;
 }
 .gb_Xe {
   width: 28px;
-  /* color: red; */
 }
 .T {
   background: rgb(23, 190, 182);
@@ -82,7 +81,6 @@
 @media (max-width: 900px) {
   .header .input-field {
     width: 48%;
-    /* border: 1px solid green; */
   }
   .marks {
     width: 185px;

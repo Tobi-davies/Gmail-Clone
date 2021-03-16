@@ -13,42 +13,29 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 const CategoryBtn = ({
-  // paginate,
   changePage,
   hidePromo,
   hideSocial,
   selectPromo,
   selectSocial,
-  // socialVisible,
-  // setSocialVisible,
-  // promoVisible,
-  // setPromoVisible,
 }) => {
   const [color, setColor] = useState("red");
-  // const [green, setGreen] = useState(false);
-  // const [blue, setBlue] = useState(false);
-  // const [socialVisible, setSocialVisible] = useState(true);
-  // const [promoVisible, setPromoVisible] = useState(true);
+
   const handleChange1 = () => {
     setColor("red");
-    // paginate(1);
     changePage(1);
   };
 
   const handleChange2 = () => {
     setColor("blue");
-    // paginate(2);
     changePage(2);
     hideSocial();
-    // setSocialVisible(false);
   };
 
   const handleChange3 = () => {
     setColor("green");
-    // paginate(3);
     changePage(3);
     hidePromo();
-    // setPromoVisible(false);
   };
 
   return (
@@ -162,38 +149,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryBtn);
-
-// const Pagination = ({ pageLimit, newLength, paginate, currentPage }) => {
-//   const pageNumbers = [];
-//   const averagePost = Math.ceil(newLength / pageLimit);
-//   for (let i = 1; i < averagePost + 1; i++) {
-//     pageNumbers.push(i);
-//   }
-
-//   console.log(averagePost);
-
-//   return (
-//     <nav className="paginated">
-//       {currentPage > 1 ? (
-//         <li className="prev" onClick={() => paginate(currentPage - 1)}>
-//           PREV
-//         </li>
-//       ) : (
-//         ""
-//       )}
-//       {pageNumbers.map((num) => (
-//         <li key={num} className="page-link" onClick={() => paginate(num)}>
-//           {num}
-//         </li>
-//       ))}
-
-//       {currentPage < averagePost ? (
-//         <li className="prev" onClick={() => paginate(currentPage + 1)}>
-//           NEXT
-//         </li>
-//       ) : (
-//         ""
-//       )}
-//     </nav>
-//   );
-// };

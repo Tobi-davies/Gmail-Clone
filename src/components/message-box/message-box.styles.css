@@ -1,7 +1,6 @@
 .message-box {
   width: 440px;
   height: 468px;
-  /* border: 1px solid green; */
   background: #fff;
   position: fixed;
   z-index: 1;
@@ -20,8 +19,6 @@
   background-color: #2d2e30;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-
-  /* height: 20px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,10 +31,6 @@
 
 .new-message-head .new-message-icons {
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: flex-end; */
-  /* justify-content: center; */
-  /* justify-content: start; */
 }
 
 .new-message-head .new-message-icons i {
@@ -57,7 +50,6 @@
   height: 35px;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  /* background: red; */
   border-bottom: 1px solid #f1f3f4;
 }
 .inner input::placeholder {
@@ -67,11 +59,11 @@
 .message-body textarea {
   width: 100%;
   outline: none;
-  /* border: none; */
+  border: none;
   margin-top: 10px;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  /* background: #fff; */
+  background: #fff;
 }
 
 .message-bottom {
@@ -91,8 +83,6 @@
   font-weight: bold;
 }
 .message-bottom .send-btn button .send {
-  /* padding: 10px 3px 10px 6px; */
-  /* border-right: 1px solid black; */
   padding-right: 10px;
   border-right: 1px solid rgb(63, 63, 63);
 }
@@ -109,4 +99,10 @@
 .message-bottom .right-icon span img {
   opacity: 0.54;
   padding-left: 5px;
+}
+
+@media (max-width: 650px) {
+  .message-box {
+    display: none;
+  }
 }

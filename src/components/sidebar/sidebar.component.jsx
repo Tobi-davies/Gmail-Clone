@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 
 const SideBar = ({ shouldMessageShow }) => {
   const [hightlight, setHighlight] = useState("inbox");
-  // const handleClose = () => {
-  //   shouldMessageShow(true);
-  // };
 
   const handleClick = () => {
     shouldMessageShow(false);
@@ -28,10 +25,6 @@ const SideBar = ({ shouldMessageShow }) => {
             >
               <span className="icon">
                 {hightlight === "inbox" ? (
-                  // <img
-                  //   src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
-                  //   alt="inbox"
-                  // />
                   <img
                     src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
                     alt="img"

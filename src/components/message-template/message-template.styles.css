@@ -6,14 +6,11 @@
   background: #fff;
   border-bottom: 1px solid #f1f3f4;
   cursor: pointer;
-  /* border-right: 1px solid #f1f3f4; */
-  /* border: 1px solid green; */
 }
 .message-body .date-icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border: 1px solid black; */
   display: none;
 }
 
@@ -27,7 +24,6 @@
   background: none;
   outline: none;
   border: none;
-  /* height: 21px; */
   font-size: 1rem;
   opacity: 0.16;
   margin-right: 13px;
@@ -39,9 +35,6 @@
   font-size: 14.5px;
   width: 210px;
   font-weight: 500;
-  /* width: 20%; */
-  /* padding: 10px 0 10px; */
-  /* border: 1px solid blue; */
   position: relative;
   flex-shrink: 0;
 }
@@ -52,42 +45,29 @@
 .message-template .message-body {
   flex: 1;
   font-size: 14.5px;
-
-  /* width: 72%; */
-  /* flex-grow: 1; */
-  /* border: 2px solid orchid; */
   display: flex;
   align-items: center;
   overflow: hidden;
-  /* justify-content: space-between; */
 }
 .message-body .message-body-first {
-  /* width: 100%; */
   display: flex;
   width: 88%;
   white-space: nowrap;
   overflow: hidden;
-  /* border: 1px solid red; */
 }
 .message-body .message-body-first .message-body-content {
   overflow: hidden;
-  /* white-space: nowrap; */
   text-overflow: ellipsis;
-  /* border: 1px solid blue; */
-  /* margin-left: 4px; */
 }
 .dash {
-  /* margin: 0 4px 0 4px; */
   padding: 0 4px 0 4px;
 }
 .date {
   display: block;
   font-size: 12px;
   margin-left: auto;
-  /* border: 1px solid red; */
   width: 80px;
   text-align: end;
-  /* align-self: flex-end; */
 }
 .message-template:hover .date {
   display: none;
@@ -102,13 +82,7 @@
 }
 
 .message-template:hover .message-body .date-icons {
-  /* margin-left: 100px; */
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid black; */
   width: 150px;
-  /* width: 20%; */
   display: flex;
   margin-left: auto;
 }
@@ -132,8 +106,6 @@
     position: relative;
     padding-top: 10px;
     padding-bottom: 35px;
-    /* padding-bottom: 10px; */
-    /* width: 100%; */
   }
   .message-template .square {
     padding: 0px 0 10px;
@@ -149,7 +121,6 @@
 
   .message-template .message-body .message-body-first {
     display: flex;
-    /* align-items: flex-start; */
     flex-direction: column;
     position: absolute;
     top: 30px;
@@ -174,16 +145,42 @@
 }
 
 @media (max-width: 700px) {
+  .message-template {
+    padding-top: 15px;
+    padding-bottom: 40px;
+    border-bottom: none;
+  }
   .message-template:hover .message-body .date-icons {
     display: none;
   }
   .message-template:hover .date {
     display: unset;
   }
-}
 
-@media screen and (max-width: 700px) {
-  .message-template {
-    border-bottom: none;
+  .message-template .square {
+    padding: 0px 0 10px 5px;
+  }
+  .date {
+    right: 20px;
+    font-size: 15px !important;
+  }
+  .message-template .star {
+    right: 5px;
+  }
+  .message-template .message-body .message-body-first {
+    left: 50px;
+    width: 72%;
+    top: 35px;
+    font-size: 15px;
+  }
+  .message-template .message-title {
+    position: absolute;
+    left: 50px;
+    top: 15px;
+    font-size: 15px;
   }
 }
+
+/* @media screen and (max-width: 700px) {
+  
+} */

@@ -1,29 +1,29 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./mobile-nav.styles.css";
-// import CategoryBtn from "../category-buttons/category-button.component";
 import { motion, AnimatePresence } from "framer-motion";
 import { BiCalendarAlt } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { connect } from "react-redux";
 import { changePage } from "../../redux/paginate/paginate.actions";
 
-const navVariants = {
-  hidden: {
-    x: "-100vw",
-  },
-  visible: {
-    x: 0,
+// const navVariants = {
+//   hidden: {
+//     x: "-100vw",
+//   },
+//   visible: {
+//     x: 0,
 
-    transition: {
-      type: "tween",
-      duration: 5,
-      // yoyo: Infinity,
-    },
-  },
-};
+//     transition: {
+//       type: "tween",
+//       duration: 5,
+//       // yoyo: Infinity,
+//     },
+//   },
+// };
 
 const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
+  const [hightlight, setHighlight] = useState("primary");
   const navRef = useRef();
 
   //nav action when clicked outside
@@ -52,9 +52,9 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
   return (
     <AnimatePresence>
       <motion.div
-        variants={navVariants}
-        initial="hidden"
-        animate="visible"
+        // variants={navVariants}
+        // initial="hidden"
+        // animate="visible"
         // exit={{ x: "-100vw" }}
         // exit="exit"
         ref={navRef}
@@ -63,75 +63,91 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
         <p className="mobile-logo">Gmail</p>
         <ul className="mobile-nav-button">
           <Link to="/">
-            <li onClick={() => changePage(1)}>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
-                alt="img"
-              />
+            <li
+              className={hightlight === "primary" ? "red-highlight" : ""}
+              onClick={() => {
+                changePage(1);
+                setHighlight("primary");
+                showMobileNav(false);
+              }}
+            >
+              {hightlight === "primary" ? (
+                <img
+                  src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
+                  alt="img"
+                />
+              ) : (
+                <img
+                  src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
+                  alt="inbox"
+                  className="mobile-dull"
+                />
+              )}
+
               <span>Primary</span>
             </li>
           </Link>
           <Link to="/">
-            <li onClick={() => changePage(2)}>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/people_black_20dp.png"
-                alt="img"
-                className="dull"
-              />
+            <li
+              className={hightlight === "social" ? "blue-highlight" : ""}
+              onClick={() => {
+                changePage(2);
+                setHighlight("social");
+                showMobileNav(false);
+              }}
+            >
+              {hightlight === "social" ? (
+                <img
+                  src="https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png"
+                  alt="img"
+                />
+              ) : (
+                <img
+                  src="https://www.gstatic.com/images/icons/material/system/1x/people_black_20dp.png"
+                  alt="img"
+                  className="mobile-dull"
+                />
+              )}
               <span>Social</span>
             </li>
           </Link>
-          <li onClick={() => changePage(3)}>
-            <img
-              src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_black_20dp.png"
-              alt="img"
-              className="dull"
-            />
+          <li
+            className={hightlight === "promotion" ? "green-highlight" : ""}
+            onClick={() => {
+              changePage(3);
+              setHighlight("promotion");
+              showMobileNav(false);
+            }}
+          >
+            {hightlight === "promotion" ? (
+              <img
+                src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_gm_green700_20dp.png"
+                alt="img"
+              />
+            ) : (
+              <img
+                src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_black_20dp.png"
+                alt="img"
+                className="mobile-dull"
+              />
+            )}
+
             <span>Promotions</span>
           </li>
         </ul>
         <div className="mobile-options-list">
           <p className="all-labels">ALL LABELS</p>
           <ul className="mobile-options-top">
-            {/* <Link to="/">
-              <li
-              className={hightlight === "inbox" ? "red-highlight" : ""}
-              onClick={() => setHighlight("inbox")}
-              >
-                <span className="icon">
-                  <img
-                    src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
-                    alt="inbox"
-                  />
-                  {hightlight === "inbox" ? (
-                  <img
-                    src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
-                    alt="inbox"
-                  />
-                  <img
-                    src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
-                    alt="img"
-                  />
-                ) : (
-                  <img
-                    src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
-                    alt="inbox"
-                  />
-                )}
-                </span>
-                <span className="title">Inbox</span>
-                <span className="number">661</span>
-              </li>
-            </Link> */}
             <Link to="/starred">
               <li
-              // className={hightlight === "starred" ? "highlight" : ""}
-              // onClick={() => setHighlight("starred")}
+                className={hightlight === "starred" ? "highlight" : ""}
+                onClick={() => setHighlight("starred")}
               >
                 <span className="icon">
                   <img
                     src="https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png"
                     alt="inbox"
+                    className="mobile-dull"
                   />
                 </span>
                 <span className="title">Starred</span>
@@ -139,26 +155,28 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
             </Link>
 
             <li
-            // className={hightlight === "snoozed" ? "highlight" : ""}
-            // onClick={() => setHighlight("snoozed")}
+              className={hightlight === "snoozed" ? "highlight" : ""}
+              onClick={() => setHighlight("snoozed")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/watch_later_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">Snoozed</span>
             </li>
 
             <li
-            // className={hightlight === "important" ? "highlight" : ""}
-            // onClick={() => setHighlight("important")}
+              className={hightlight === "important" ? "highlight" : ""}
+              onClick={() => setHighlight("important")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/label_important_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">Important</span>
@@ -166,13 +184,14 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
 
             <Link to="/sent">
               <li
-              // className={hightlight === "sent" ? "highlight" : ""}
-              // onClick={() => setHighlight("sent")}
+                className={hightlight === "sent" ? "highlight" : ""}
+                onClick={() => setHighlight("sent")}
               >
                 <span className="icon">
                   <img
                     src="https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png"
                     alt="inbox"
+                    className="mobile-dull"
                   />
                 </span>
                 <span className="title">Sent</span>
@@ -180,26 +199,28 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
             </Link>
 
             <li
-            // className={hightlight === "scheduled" ? "highlight" : ""}
-            // onClick={() => setHighlight("scheduled")}
+              className={hightlight === "scheduled" ? "highlight" : ""}
+              onClick={() => setHighlight("scheduled")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/schedule_send_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">Scheduled</span>
             </li>
 
             <li
-            // className={hightlight === "drafts" ? "highlight" : ""}
-            // onClick={() => setHighlight("drafts")}
+              className={hightlight === "drafts" ? "highlight" : ""}
+              onClick={() => setHighlight("drafts")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/insert_drive_file_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">Drafts</span>
@@ -207,39 +228,42 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
             </li>
 
             <li
-            // className={hightlight === "chats" ? "highlight" : ""}
-            // onClick={() => setHighlight("chats")}
+              className={hightlight === "chats" ? "highlight" : ""}
+              onClick={() => setHighlight("chats")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/hangout_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">Chats</span>
             </li>
 
             <li
-            // className={hightlight === "all-mail" ? "highlight" : ""}
-            // onClick={() => setHighlight("all-mail")}
+              className={hightlight === "all-mail" ? "highlight" : ""}
+              onClick={() => setHighlight("all-mail")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/mail_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">All Mail</span>
             </li>
 
             <li
-            // className={hightlight === "spam" ? "highlight" : ""}
-            // onClick={() => setHighlight("spam")}
+              className={hightlight === "spam" ? "highlight" : ""}
+              onClick={() => setHighlight("spam")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/report_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">Spam</span>
@@ -247,27 +271,19 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
             </li>
 
             <li
-            // className={hightlight === "trash" ? "highlight" : ""}
-            // onClick={() => setHighlight("trash")}
+              className={hightlight === "trash" ? "highlight" : ""}
+              onClick={() => setHighlight("trash")}
             >
               <span className="icon">
                 <img
                   src="https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png"
                   alt="inbox"
+                  className="mobile-dull"
                 />
               </span>
               <span className="title">Trash</span>
             </li>
 
-            {/* <li>
-            <span className="icon">
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
-                alt="inbox"
-              />
-            </span>
-            <span className="title">Create new label</span>
-          </li> */}
             <li>GOOGLE APPS</li>
             <li>
               <BiCalendarAlt className="calender-icon" />

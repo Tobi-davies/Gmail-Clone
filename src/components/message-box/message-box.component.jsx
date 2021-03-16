@@ -39,15 +39,11 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
   let date = formatDate(today.getDate());
   let month = monthList[today.getMonth()];
   let timeSent = `${month} ${date}`;
-  console.log(month);
+  // console.log(month);
 
   const [receiver, setTo] = useState("");
   const [topic, setSubject] = useState("");
   const [content, setBody] = useState("");
-
-  // let first;
-  // let second;
-  // let third;
 
   const handleTo = (e) => {
     setTo(e.target.value);
@@ -78,8 +74,6 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
 
     addSent(data);
 
-    // console.log(data);
-
     if (receiver !== "" && topic !== "" && content !== "") {
       shouldMessageShow(true);
     }
@@ -88,8 +82,6 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
     setSubject("");
     setBody("");
   };
-
-  // console.log(receiver);
 
   // const handleChange = (event) => {
   //   // const { name, value } = event.target;

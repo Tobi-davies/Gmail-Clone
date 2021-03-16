@@ -1,0 +1,75 @@
+.compose-message {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px 0;
+  font-family: "Roboto", sans-serif;
+}
+.compose-message .top-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+.compose-message .top-links .top-links-left {
+  display: flex;
+  align-items: center;
+}
+
+.compose-message .top-links .top-links-left p {
+  font-size: 1.2rem;
+  margin-left: 25px;
+}
+.compose-message .top-links .top-links-right > * {
+  margin-left: 15px;
+}
+.compose-icon {
+  color: #000;
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+
+.compose-message .compose-message-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.compose-message .compose-message-body input {
+  height: 7vh;
+  border: none;
+  border-bottom: 2px solid #f1f3f4;
+  width: 100%;
+  padding-left: 60px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  font-size: 16px;
+}
+
+.compose-message .compose-message-body textarea {
+  height: 50vh;
+  border: none;
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+.from-container,
+.to-container {
+  position: relative;
+}
+
+.from-container p,
+.to-container p {
+  position: absolute;
+  top: 33%;
+  left: 5%;
+}
+.compose-message .compose-message-body .subject-input {
+  padding-left: 22px;
+}

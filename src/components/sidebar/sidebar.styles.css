@@ -10,7 +10,6 @@
   position: fixed;
   left: 0;
   top: 62px;
-  /* border: 2px solid red; */
 }
 .compose-btn {
   display: flex;
@@ -38,10 +37,8 @@
   font-family: "Roboto", sans-serif;
   font-size: 14.5px;
   max-height: 208px;
-  /* border: 1px solid purple; */
   overflow-y: hidden;
   border-bottom: 1px solid #f1f3f4;
-  /* padding-right: 40px; */
 }
 .options-list ul:hover {
   border-top: 1px solid #f1f3f4;
@@ -56,9 +53,6 @@
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
   cursor: pointer;
-
-  /* border: 1px solid black; */
-  /* color: #202124; */
 }
 .options-list ul li:hover {
   background-color: #f1f3f4de;
@@ -75,13 +69,10 @@
   background: #fceae9 !important;
 }
 .highlight {
-  /* color: #202124; */
   font-weight: 600;
   background-color: #e0e2e2de;
 }
 .highlight:hover {
-  /* color: #202124; */
-  /* font-weight: 600; */
   background-color: #e0e2e2de !important;
 }
 .options-list ul li span img {

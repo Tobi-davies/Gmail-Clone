@@ -16,14 +16,14 @@ const Header = () => {
             className="gb_uc"
             src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png"
             // srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png 2x "
-            // alt="logo"
+            alt="logo"
             // aria-hidden="true"
             // style="width:109px;height:40px"
           />
         </div>
       </div>
       <div className="input-field">
-        <input type="text" name="input" id="input" />
+        <input type="text" name="input" placeholder="Search Gmail" id="input" />
         <span className="search-icon">
           <i className="fas fa-search"></i>
         </span>

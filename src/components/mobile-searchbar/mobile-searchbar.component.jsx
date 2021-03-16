@@ -2,17 +2,17 @@ import React from "react";
 import "./mobile-searchbar.styles.css";
 import { motion } from "framer-motion";
 
-const barVariants = {
-  hidden: {
-    // opacity: 0,
-    x: 0,
-  },
-  visible: {
-    x: 200,
-    scale: 1.1,
-    transition: { type: "tween", duration: 2 },
-  },
-};
+// const barVariants = {
+//   hidden: {
+//     // opacity: 0,
+//     x: 0,
+//   },
+//   visible: {
+//     x: 200,
+//     scale: 1.1,
+//     transition: { type: "tween", duration: 2 },
+//   },
+// };
 
 const MobileSearchbar = ({ showMobileNav }) => {
   return (
@@ -20,9 +20,9 @@ const MobileSearchbar = ({ showMobileNav }) => {
       <div className="mobile-input-field">
         <input type="text" name="input" placeholder="Search Gmail" />
         <motion.svg
-          variants={barVariants}
-          initial="hidden"
-          animate="visible"
+          // variants={barVariants}
+          // initial="hidden"
+          // animate="visible"
           onClick={() => showMobileNav(true)}
           className="mobile-bar"
           focusable="false"

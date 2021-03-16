@@ -35,7 +35,11 @@ button {
   .middle {
     /* right: 0; */
     left: 0;
+    top: 0;
     /* top: 9vh; */
+  }
+  .Hide-app {
+    overflow-y: hidden;
   }
 }
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./message-template.styles.css";
-// import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addStarred } from "../../redux/starred/starred.actions";
 import { createStructuredSelector } from "reselect";
@@ -8,20 +7,13 @@ import { changeStarColor } from "../../redux/starred/starred.selectors";
 
 const MessageTemplate = ({ data, addStarred, changeStarColor }) => {
   const [toggle, setToggle] = useState("false");
-  // console.log(match);
   console.log(changeStarColor);
 
   const handleClick = () => {
     // history.push("/starred");
-    // setToggle((prev) => !prev);
     setToggle((prev) => !prev);
 
-    // if (toggle === false) {
-    //   removeStarred(data);
-    // } else {
     addStarred(data);
-    // }
-    console.log(toggle);
   };
 
   return (

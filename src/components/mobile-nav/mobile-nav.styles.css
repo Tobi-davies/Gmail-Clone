@@ -1,19 +1,30 @@
 .mobile-nav {
   display: none;
-  font-family: "Roboto", sans-serif;
 }
 
 @media (max-width: 650px) {
   .mobile-nav {
+    font-family: "Roboto", sans-serif;
+
+    padding-right: 8px;
+
     background: #fff;
-    width: 75%;
+    width: 300px;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
     z-index: 2;
-    display: none;
-    border: 1px solid green;
-    /* transition: 5s all ease; */
+
+    display: block;
+    transform: translateX(-100vh);
+    transition: 1s all ease;
+  }
+
+  .display-nav {
+    display: block;
+    transform: translateX(0);
+    /* animation: displayMenu 2s forwards;
+    -webkit-animation: displayMenu 2s; */
   }
   .mobile-nav .mobile-logo {
     color: #d93025;
@@ -24,37 +35,37 @@
 
     border-bottom: 1px solid #f1f3f4;
   }
-  /* .mobile-nav .category-btn {
-    flex-direction: column;
-    border-top: 1px solid #f1f3f4;
-  } */
+
   .mobile-nav .mobile-nav-button li {
     display: flex;
     align-items: center;
-    padding: 10px 3px 10px 15px;
+    padding: 13px 3px 13px 15px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    color: #202124;
+    border: none;
   }
   .mobile-nav .mobile-nav-button li img {
     margin-right: 15px;
+    width: 1.55rem;
   }
-  .mobile-nav .mobile-nav-button li .dull {
-    opacity: 0.7;
-  }
+
   .contact-icon,
   .calender-icon,
   .mobile-grey {
     margin-right: 15px;
   }
 
-  .mobile-nav .mobile-options-list ul {
-    /* font-family: "Roboto", sans-serif; */
-    /* font-size: 14.5px; */
-    /* max-height: unset; */
-
-    /* border-bottom: 1px solid #f1f3f4; */
+  .mobile-dull {
+    opacity: 0.8;
+  }
+  .mobile-nav .highlight {
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
   }
 
   .mobile-nav .mobile-options-list .all-labels {
-    padding: 5px 0 0 15px;
+    padding: 10px 0 5px 15px;
     font-size: 14px;
   }
   .mobile-nav .mobile-options-list .mobile-options-top {
@@ -63,25 +74,29 @@
   .mobile-nav .mobile-options-list ul li {
     /* background: #ccc; */
     padding: 4px 8px 4px 15px;
-    padding: 10px 3px 10px 15px;
+    padding: 13px 3px 13px 15px;
     display: flex;
     align-items: center;
+    color: #202124;
   }
   .mobile-nav .mobile-options-list ul li img {
-    opacity: 0.7;
     margin-right: 15px;
+    width: 1.55rem;
   }
 
   .mobile-nav .mobile-options-list .mobile-options-top .calender-icon,
   .mobile-nav .mobile-options-list .mobile-options-top .contact-icon {
-    font-size: 1.4rem;
-    opacity: 0.7;
+    font-size: 1.55rem;
   }
-  /* .calender-icon {
-    width: 30px;
-    font-size: 4rem;
-  } */
-  .display-nav {
-    display: block;
+
+  .blue-highlight {
+    color: #1a73e8 !important;
+    background: #d6e6fa;
+    font-weight: 500;
+  }
+  .green-highlight {
+    color: #188038 !important;
+    font-weight: 500;
+    background: #d3f8de;
   }
 }
