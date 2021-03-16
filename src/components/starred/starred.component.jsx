@@ -6,7 +6,7 @@ import { selectStarredList } from "../../redux/starred/starred.selectors";
 import StarList from "../star-list/star-list.component";
 
 const Starred = ({ starredItems }) => {
-  console.log(starredItems);
+  // console.log(starredItems);
 
   return (
     <div className="starred">

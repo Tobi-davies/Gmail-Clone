@@ -20,7 +20,7 @@ function App({ location }) {
   const [mobileNav, showMobileNav] = useState(false);
 
   return (
-    <div className={mobileNav ? "App Hide-app" : App}>
+    <div className={mobileNav ? "App Hide-app" : "App"}>
       <Header />
       <SideBar shouldMessageShow={showMessageBox} />
       <RightColumn />

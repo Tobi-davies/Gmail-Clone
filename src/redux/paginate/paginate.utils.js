@@ -12,7 +12,7 @@ export const changePageNumber = (pagenumber) => {
   let currentMessages = null;
 
   currentMessages = messagesArray.slice(indexOfFirstPost, indexOfLastPost);
-  console.log(currentMessages);
+  // console.log(currentMessages);
   // console.log(data);
   // console.log(currentPage);
 

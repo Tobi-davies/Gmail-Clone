@@ -7,7 +7,7 @@ import { changeStarColor } from "../../redux/starred/starred.selectors";
 
 const MessageTemplate = ({ data, addStarred, changeStarColor }) => {
   const [toggle, setToggle] = useState("false");
-  console.log(changeStarColor);
+  // console.log(changeStarColor);
 
   const handleClick = () => {
     // history.push("/starred");
