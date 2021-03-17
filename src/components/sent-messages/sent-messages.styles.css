@@ -1,11 +1,11 @@
-/* different */
+/* different
 .message-list {
   display: flex;
   align-items: center;
   padding: 10px 15px;
   font-family: "Roboto", sans-serif;
   border-bottom: 1px solid #f1f3f4;
-  background: #fff;
+  background: #f1f3f4;
 }
 .message-list .square {
   opacity: 0.16;
@@ -16,7 +16,6 @@
   background: none;
   outline: none;
   border: none;
-  /* height: 21px; */
   font-size: 1rem;
   margin-right: 6px;
   padding: 5px 7px;
@@ -40,4 +39,4 @@
 .message-list .date {
   margin-left: auto;
   font-size: 12px;
-}
+} */

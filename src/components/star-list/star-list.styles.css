@@ -1,10 +1,12 @@
-.star-list {
+/* .star-list {
   display: flex;
   align-items: center;
   padding: 10px 15px;
+  position: relative;
   font-family: "Roboto", sans-serif;
   border-bottom: 1px solid #f1f3f4;
   background: #f2f5f5cc;
+  cursor: pointer;
 }
 .star-list .square {
   opacity: 0.16;
@@ -38,4 +40,27 @@
 .star-list .date {
   margin-left: auto;
   font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .star-list {
+    padding-bottom: 35px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+  .star-list .square {
+
+    padding: 0px 0 10px;
+  }
+  .star-list .star {
+
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+  }
+} */
+
+.star-list .star {
+  opacity: 1 !important;
 }

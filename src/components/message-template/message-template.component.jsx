@@ -42,13 +42,9 @@ const MessageTemplate = ({ data, addStarred, changeStarColor }) => {
 
       <div className="message-body">
         <div className="message-body-first">
-          <span className="message-body-title">Message title</span>{" "}
+          <span className="message-body-title">{data.title}</span>
           <span className="dash">-</span>
-          <span className="message-body-content">
-            na him be this oh, I just dey try practice this wrap thing sef omo
-            oti fe ma stress aye me mehn, like wtf is going on....cant I just
-            blow with code
-          </span>
+          <span className="message-body-content">{data.body}</span>
         </div>
         <div className="date-icons">
           <img

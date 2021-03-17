@@ -1,6 +1,7 @@
 .message-template {
   display: flex;
   align-items: center;
+  position: relative;
   padding: 0 15px 0 15px;
   font-family: "Roboto", sans-serif;
   background: #fff;
@@ -33,7 +34,7 @@
 }
 .message-template .message-title {
   font-size: 14.5px;
-  width: 210px;
+  min-width: 210px;
   font-weight: 500;
   position: relative;
   flex-shrink: 0;
@@ -74,7 +75,8 @@
 }
 .message-template:hover {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: 3;
 }
 .message-template:hover .star,
 .message-template:hover .square {
@@ -103,7 +105,6 @@
   .message-template {
     flex-direction: column;
     align-items: flex-start;
-    position: relative;
     padding-top: 10px;
     padding-bottom: 35px;
   }
@@ -149,6 +150,11 @@
     padding-top: 15px;
     padding-bottom: 40px;
     border-bottom: none;
+  }
+  .message-template:hover {
+    border: unset;
+    box-shadow: unset;
+    background: rgb(243, 243, 243);
   }
   .message-template:hover .message-body .date-icons {
     display: none;

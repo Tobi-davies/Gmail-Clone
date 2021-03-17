@@ -10,9 +10,16 @@ const Sent = ({ sentItems }) => {
 
   return (
     <div className="sent">
-      {sentItems.map((item, index) => (
-        <SentMessages key={index} item={item} />
-      ))}
+      {sentItems.length > 0 ? (
+        <div>
+          <h4 className="sent-heading">SENT</h4>
+          {sentItems.map((item, index) => (
+            <SentMessages key={index} item={item} />
+          ))}
+        </div>
+      ) : (
+        <p className="no-item">Nothing in Sent</p>
+      )}
     </div>
   );
 };
