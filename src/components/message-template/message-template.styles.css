@@ -148,7 +148,7 @@
 
 @media (max-width: 700px) {
   .message-template {
-    padding-top: 15px;
+    padding-top: 14px;
     padding-bottom: 40px;
     border-bottom: none;
   }
