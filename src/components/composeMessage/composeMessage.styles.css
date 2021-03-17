@@ -67,7 +67,7 @@
 .from-container p,
 .to-container p {
   position: absolute;
-  top: 33%;
+  top: 30%;
   left: 5%;
 }
 .compose-message .compose-message-body .subject-input {
