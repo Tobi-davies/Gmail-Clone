@@ -141,7 +141,10 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
             <Link to="/starred">
               <li
                 className={hightlight === "starred" ? "highlight" : ""}
-                onClick={() => setHighlight("starred")}
+                onClick={() => {
+                  setHighlight("starred");
+                  showMobileNav(false);
+                }}
               >
                 <span className="icon">
                   <img
@@ -185,7 +188,10 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
             <Link to="/sent">
               <li
                 className={hightlight === "sent" ? "highlight" : ""}
-                onClick={() => setHighlight("sent")}
+                onClick={() => {
+                  setHighlight("sent");
+                  showMobileNav(false);
+                }}
               >
                 <span className="icon">
                   <img

@@ -31,7 +31,7 @@
     padding: 10px;
     font-size: 20px;
     font-family: "Roboto", sans-serif;
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
 
     border-bottom: 1px solid #f1f3f4;
   }
@@ -67,6 +67,7 @@
   .mobile-nav .mobile-options-list .all-labels {
     padding: 10px 0 5px 15px;
     font-size: 14px;
+    font-family: "Poppins", sans-serif;
   }
   .mobile-nav .mobile-options-list .mobile-options-top {
     border-bottom: 1px solid #f1f3f4;
