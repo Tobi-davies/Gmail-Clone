@@ -220,9 +220,105 @@ const NAME_DATA = [
   },
   {
     id: 35,
-    name: "Burgundy T-shirt",
-    title: "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
-    body: 25,
+    name: "Codecademy",
+    title: "New Career Paths. New career possibilities",
+    body:
+      "Fast-track your learning with new paths for Data Analysis and Data Science",
+  },
+  {
+    id: 36,
+    name: "Canva",
+    title: "Make your designs move",
+    body:
+      "Surprise and delight with animation Weekly Newsletter Bring your designs and",
+  },
+  {
+    id: 37,
+    name: "Adobe Creative cloud",
+    title: "20+ creative apps for the price of a single one",
+    body: "Get 20+ Adobe apps with Creative Cloud. Get 2 months+",
+  },
+  {
+    id: 38,
+    name: "Lily at FutureLearn",
+    title: "Courses to impress you 😍 (and employers!)",
+    body: "Trending courses that we think you might like",
+  },
+  {
+    id: 39,
+    name: "Eva Product School",
+    title: "Spotted",
+    body: "Fresh products jobs from all over the world",
+  },
+  {
+    id: 40,
+    name: "Grammarly Insights",
+    title: "No writing activity last week?",
+    body: "Lets get back to it! Make sure you're logged in",
+  },
+  {
+    id: 41,
+    name: "Codepen",
+    title: "The CodePen Spark: Popsicles, Panels, and Pugs",
+    body: "The issue of the CodePen Spark is brought",
+  },
+  {
+    id: 42,
+    name: "Uche from bolt",
+    title: "Stay safe during the holidays",
+    body:
+      "As we celebrate the holidays and say goodbye to 2020, it is important for all of us to remain safety-conscious. ",
+  },
+
+  {
+    id: 43,
+    name: "SPECTRANET TEAM",
+    title: "100% DATA BONUS OFFER - ONLINE Renewal",
+    body: "ENJOY MORE! Renew your account ONLINE TODAY and get 100% bonus",
+  },
+  {
+    id: 44,
+    name: "Heroku",
+    title: "Deploy with confidence: create a pipeline",
+    body: "Learn how Heroku Pipelines can help you deploy efficient apps",
+  },
+  {
+    id: 45,
+    name: "PluralSight",
+    title: "Get 33% off for a limited time only",
+    body: "It's one of our best deals of the year",
+  },
+  {
+    id: 46,
+    name: "Lily at FutureLearn",
+    title: "DON’T MISS THIS: 30% off FutureLearn Unlimited!",
+    body: "30% off as may short courses and digital ",
+  },
+  {
+    id: 47,
+    name: "Codepen",
+    title: "The CodePen Spark: Paper, Patterns, and Pop",
+    body: "View thios issue on CodePen Paper, Patterns and Pop",
+  },
+  {
+    id: 48,
+    name: "Lily at FutureLearn",
+    title: "DON’T MISS THIS: 30% off FutureLearn Unlimited!",
+    body: "30% off as may short courses and digital ",
+  },
+  {
+    id: 49,
+    name: "Uche from bolt",
+    title: "Stay safe during the holidays",
+    body:
+      "As we celebrate the holidays and say goodbye to 2020, it is important for all of us to remain safety-conscious. ",
+  },
+
+  {
+    id: 50,
+    name: "SPECTRANET TEAM",
+    title: "100% DATA BONUS OFFER - ONLINE Renewal",
+    body: "ENJOY MORE! Renew your account ONLINE TODAY and get 100% bonus",
   },
 ];
 
