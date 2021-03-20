@@ -4,6 +4,19 @@ import { connect } from "react-redux";
 import { addStarred } from "../../redux/starred/starred.actions";
 import { createStructuredSelector } from "reselect";
 import { changeStarColor } from "../../redux/starred/starred.selectors";
+import {
+  MessageTemplateContainer,
+  SquareBox,
+  Star,
+  HoverIcons,
+  MessageBody,
+  MessageBodyFirst,
+  MessageTitle,
+  MessageName,
+  MessageContent,
+  Dash,
+  Date,
+} from "./message-template.styles";
 
 const MessageTemplate = ({ data, addStarred, changeStarColor }) => {
   const [toggle, setToggle] = useState("false");
@@ -17,36 +30,35 @@ const MessageTemplate = ({ data, addStarred, changeStarColor }) => {
   };
 
   return (
-    <div className="message-template">
-      <span className="square">
+    <MessageTemplateContainer>
+      <SquareBox className="square">
         <i className="far fa-square"></i>
-      </span>
-      <button
-        className={!toggle ? "star star-bg" : "star"}
-        onClick={handleClick}
-      >
+      </SquareBox>
+      <Star className={!toggle ? "star star-bg" : "star"} onClick={handleClick}>
         {!toggle ? (
           <img
             src="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png"
             alt="star"
+            className="yellow"
           />
         ) : (
           <img
             src="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png"
             alt="star"
+            className="dark"
           />
         )}
         {/* <i className="far fa-star"></i> */}
-      </button>
-      <p className="message-title">{data.name}</p>
+      </Star>
+      <MessageName>{data.name}</MessageName>
 
-      <div className="message-body">
-        <div className="message-body-first">
-          <span className="message-body-title">{data.title}</span>
-          <span className="dash">-</span>
-          <span className="message-body-content">{data.body}</span>
-        </div>
-        <div className="date-icons">
+      <MessageBody>
+        <MessageBodyFirst>
+          <MessageTitle>{data.title}</MessageTitle>
+          <Dash>-</Dash>
+          <MessageContent>{data.body}</MessageContent>
+        </MessageBodyFirst>
+        <HoverIcons className="date-icons">
           <img
             src="https://www.gstatic.com/images/icons/material/system/1x/archive_black_20dp.png"
             alt="download-icon"
@@ -63,30 +75,10 @@ const MessageTemplate = ({ data, addStarred, changeStarColor }) => {
             src="https://www.gstatic.com/images/icons/material/system/1x/watch_later_black_20dp.png"
             alt="snooze-icon"
           />
-        </div>
-        <p className="date">26 Jan</p>
-      </div>
-      {/* <div className="date-and-icons"> */}
-      {/* <div className="date-icons">
-          <img
-            src="https://www.gstatic.com/images/icons/material/system/1x/archive_black_20dp.png"
-            alt="download-icon"
-          />
-          <img
-            src="https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png"
-            alt="thrash-icon"
-          />
-          <img
-            src="https://www.gstatic.com/images/icons/material/system/1x/mark_as_unread_black_20dp.png"
-            alt="mail-open-icon"
-          />
-          <img
-            src="https://www.gstatic.com/images/icons/material/system/1x/watch_later_black_20dp.png"
-            alt="snooze-icon"
-          />
-        </div> */}
-    </div>
-    // </div>
+        </HoverIcons>
+        <Date className="date">{data.date}</Date>
+      </MessageBody>
+    </MessageTemplateContainer>
   );
 };
 
