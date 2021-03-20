@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import "./mobile-nav.styles.css";
 import { BiCalendarAlt } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { connect } from "react-redux";

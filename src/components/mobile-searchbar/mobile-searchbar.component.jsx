@@ -1,6 +1,5 @@
 import React from "react";
-// import "./mobile-searchbar.styles.css";
-// import { motion } from "framer-motion";
+
 import {
   SearchbarContainer,
   MobileSearchField,
