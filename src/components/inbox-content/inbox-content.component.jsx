@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import "./inbox-content.styles.css";
+// import "./inbox-content.styles.css";
 import CategoryBtn from "../category-buttons/category-button.component";
 import MessageTemplate from "../message-template/message-template.component";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectPageData } from "../../redux/paginate/paginate.selectors";
 import { changePage } from "../../redux/paginate/paginate.actions";
+import { InboxContainer } from "./inbox-content.styles";
 
 const InboxContent = ({ changePage, currentMessages }) => {
   useEffect(() => {
@@ -14,12 +15,12 @@ const InboxContent = ({ changePage, currentMessages }) => {
   // console.log(currentMessages);
 
   return (
-    <div className="inbox-content">
+    <InboxContainer>
       <CategoryBtn />
       {currentMessages.map((data, index) => (
         <MessageTemplate key={index} data={data} />
       ))}
-    </div>
+    </InboxContainer>
   );
 };
 const mapDispatchToProps = (dispatch) => ({

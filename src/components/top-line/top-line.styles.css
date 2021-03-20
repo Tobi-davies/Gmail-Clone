@@ -1,4 +1,4 @@
-.top-line {
+/* .top-line {
   position: fixed;
   padding: 14px 20px 14px 5px;
   display: flex;
@@ -8,14 +8,11 @@
   left: 260px;
   background: #fff;
   border-bottom: 1px solid #f1f3f4;
-  /* width: 75%; */
-  /* border-right: 1px solid #f1f3f4; */
+
   font-family: "Roboto", sans-serif;
   z-index: 1;
-  /* top: 100px; */
 }
 .top-line .left {
-  /* padding-right: 50%; */
   display: flex;
 }
 .top-line .left i {
@@ -62,13 +59,19 @@
     left: 230px;
   }
 }
+@media (max-width: 800px) {
+  .top-line {
+    right: 0;
+  }
+}
 @media (max-width: 700px) {
   .top-line {
     right: 0;
+    left: 200px;
   }
 }
 @media (max-width: 650px) {
   .top-line {
     display: none;
   }
-}
+} */

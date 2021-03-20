@@ -1,9 +1,9 @@
-/* .mobile-searchbar {
-  display: none;
-}
+import styled from "styled-components";
 
-@media (max-width: 650px) {
-  .mobile-searchbar {
+export const SearchbarContainer = styled.div`
+  display: none;
+
+  @media screen and (max-width: 650px) {
     display: block;
     position: relative;
     top: 2vh;
@@ -12,13 +12,27 @@
     width: 100%;
     z-index: 1;
   }
-  .mobile-searchbar .mobile-input-field {
+`;
+
+export const MobileSearchField = styled.div`
+  @media screen and (max-width: 650px) {
     width: 90%;
     margin: auto;
     height: 100%;
     position: relative;
+
+    .mobile-bar {
+      width: 24px;
+      color: #5f6368;
+      position: absolute;
+      top: 25%;
+      left: 4%;
+    }
   }
-  .mobile-searchbar .mobile-input-field input {
+`;
+
+export const MobileSearchInput = styled.input`
+  @media screen and (max-width: 650px) {
     width: 100%;
     height: 100%;
     border-radius: 8px;
@@ -28,14 +42,10 @@
     font-size: 19px;
     font-family: "Roboto", sans-serif;
   }
-  .mobile-searchbar .mobile-input-field .mobile-bar {
-    width: 24px;
-    color: #5f6368;
-    position: absolute;
-    top: 25%;
-    left: 4%;
-  }
-  .mobile-searchbar .mobile-input-field .mobile-T {
+`;
+
+export const NameIcon = styled.div`
+  @media screen and (max-width: 650px) {
     position: absolute;
     right: 3%;
     top: 24%;
@@ -51,10 +61,4 @@
     font-weight: 500;
     font-family: "Roboto", sans-serif;
   }
-}
-
-.T {
-  color: #fff;
-  font-size: 1rem;
-  margin-bottom: 5px;
-} */
+`;

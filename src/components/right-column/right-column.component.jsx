@@ -1,61 +1,67 @@
 import React from "react";
-import "./right-column.styles.css";
+import {
+  RightColumnContainer,
+  ColumnItemGroup,
+  ColumnListItem,
+  ColumnItemImage,
+  ColumnDash,
+  Dash,
+} from "./right-column.styles";
 
 const RightColumn = () => {
   return (
-    <div className="right-column">
-      <ul>
-        <li>
+    <RightColumnContainer>
+      <ColumnItemGroup>
+        <ColumnListItem>
           <span>
-            <img
+            <ColumnItemImage
               src="https://www.gstatic.com/companion/icon_assets/calendar_2020q4_2x.png"
               alt="icon"
             />
           </span>
-        </li>
+        </ColumnListItem>
 
-        <li>
+        <ColumnListItem>
           <span>
-            <img
+            <ColumnItemImage
               src="https://www.gstatic.com/companion/icon_assets/keep_2020q4v3_2x.png"
               alt="icon"
             />
           </span>
-        </li>
+        </ColumnListItem>
 
-        <li>
+        <ColumnListItem>
           <span>
-            <img
+            <ColumnItemImage
               src="https://www.gstatic.com/companion/icon_assets/tasks2_2x.png"
               alt="icon"
             />
           </span>
-        </li>
+        </ColumnListItem>
 
-        <li>
+        <ColumnListItem>
           <span>
-            <img
+            <ColumnItemImage
               src="https://www.gstatic.com/companion/icon_assets/contacts_2x.png"
               alt="icon"
             />
           </span>
-        </li>
+        </ColumnListItem>
 
-        <li className="dash">
-          {" "}
-          <span></span>
-        </li>
+        <ColumnDash>
+          <Dash></Dash>
+        </ColumnDash>
 
-        <li>
+        <ColumnListItem>
           <span>
-            <img
+            <ColumnItemImage
               src="https://www.gstatic.com/images/icons/material/system/1x/add_grey600_24dp.png"
               alt="icon"
             />
           </span>
-        </li>
-      </ul>
-    </div>
+        </ColumnListItem>
+      </ColumnItemGroup>
+    </RightColumnContainer>
   );
 };
 

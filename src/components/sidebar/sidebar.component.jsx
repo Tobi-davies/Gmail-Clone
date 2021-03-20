@@ -1,6 +1,23 @@
 import React, { useState } from "react";
 import "./sidebar.styles.css";
 import { Link } from "react-router-dom";
+import {
+  SidebarContainer,
+  ComposeButton,
+  ComposeImg,
+  SideNavContainer,
+  ListImg,
+  SideNavList,
+  Meet,
+  MeetText,
+  Hangout,
+  HangoutFlex,
+  HangoutText,
+  CapitalT,
+  HangoutName,
+  HangoutCross,
+  HangoutArrow,
+} from "./sidebar.styles";
 
 const SideBar = ({ shouldMessageShow }) => {
   const [hightlight, setHighlight] = useState("inbox");
@@ -9,17 +26,17 @@ const SideBar = ({ shouldMessageShow }) => {
     shouldMessageShow(false);
   };
   return (
-    <div className="sidebar">
+    <SidebarContainer className="sidebar">
       <div className="compose">
-        <button className="compose-btn" onClick={handleClick}>
-          <div className="compose-img"></div>
+        <ComposeButton onClick={handleClick}>
+          <ComposeImg />
           <div> Compose</div>
-        </button>
+        </ComposeButton>
       </div>
-      <div className="options-list">
-        <ul>
+      <div>
+        <SideNavContainer>
           <Link to="/">
-            <li
+            <SideNavList
               className={hightlight === "inbox" ? "red-highlight" : ""}
               onClick={() => setHighlight("inbox")}
             >
@@ -30,7 +47,7 @@ const SideBar = ({ shouldMessageShow }) => {
                     alt="img"
                   />
                 ) : (
-                  <img
+                  <ListImg
                     src="https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png"
                     alt="inbox"
                   />
@@ -38,220 +55,220 @@ const SideBar = ({ shouldMessageShow }) => {
               </span>
               <span className="title">Inbox</span>
               <span className="number">661</span>
-            </li>
+            </SideNavList>
           </Link>
           <Link to="/starred">
-            <li
+            <SideNavList
               className={hightlight === "starred" ? "highlight" : ""}
               onClick={() => setHighlight("starred")}
             >
-              <span className="icon">
-                <img
+              <span>
+                <ListImg
                   src="https://www.gstatic.com/images/icons/material/system/1x/grade_black_20dp.png"
                   alt="inbox"
                 />
               </span>
               <span className="title">Starred</span>
-            </li>
+            </SideNavList>
           </Link>
 
-          <li
+          <SideNavList
             className={hightlight === "snoozed" ? "highlight" : ""}
             onClick={() => setHighlight("snoozed")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/watch_later_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Snoozed</span>
-          </li>
+          </SideNavList>
 
           <Link to="/sent">
-            <li
+            <SideNavList
               className={hightlight === "sent" ? "highlight" : ""}
               onClick={() => setHighlight("sent")}
             >
-              <span className="icon">
-                <img
+              <span>
+                <ListImg
                   src="https://www.gstatic.com/images/icons/material/system/1x/send_black_20dp.png"
                   alt="inbox"
                 />
               </span>
               <span className="title">Sent</span>
-            </li>
+            </SideNavList>
           </Link>
 
-          <li
+          <SideNavList
             className={hightlight === "drafts" ? "highlight" : ""}
             onClick={() => setHighlight("drafts")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/insert_drive_file_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Drafts</span>
             <span className="number">20</span>
-          </li>
+          </SideNavList>
 
-          <li
+          <SideNavList
             className={hightlight === "important" ? "highlight" : ""}
             onClick={() => setHighlight("important")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/label_important_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Important</span>
-          </li>
+          </SideNavList>
 
-          <li
+          <SideNavList
             className={hightlight === "chats" ? "highlight" : ""}
             onClick={() => setHighlight("chats")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/hangout_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Chats</span>
-          </li>
+          </SideNavList>
 
-          <li
+          <SideNavList
             className={hightlight === "scheduled" ? "highlight" : ""}
             onClick={() => setHighlight("scheduled")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/schedule_send_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Scheduled</span>
-          </li>
+          </SideNavList>
 
-          <li
+          <SideNavList
             className={hightlight === "all-mail" ? "highlight" : ""}
             onClick={() => setHighlight("all-mail")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/mail_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">All Mail</span>
-          </li>
+          </SideNavList>
 
-          <li
+          <SideNavList
             className={hightlight === "spam" ? "highlight" : ""}
             onClick={() => setHighlight("spam")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/report_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Spam</span>
             <span className="number">2</span>
-          </li>
+          </SideNavList>
 
-          <li
+          <SideNavList
             className={hightlight === "trash" ? "highlight" : ""}
             onClick={() => setHighlight("trash")}
           >
-            <span className="icon">
-              <img
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Trash</span>
-          </li>
+          </SideNavList>
 
-          {/* <li>
+          {/* <SideNavList>
             <span className="icon">
-              <img
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Create new label</span>
-          </li> */}
+          </SideNavList> */}
 
-          <li
+          <SideNavList
             className={hightlight === "manage-label" ? "highlight" : ""}
             onClick={() => setHighlight("manage-label")}
           >
             <span className="icon manage-icon">
-              <img
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/settings_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Manage labels</span>
-          </li>
+          </SideNavList>
 
-          <li>
-            <span className="icon">
-              <img
+          <SideNavList>
+            <span>
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/add_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Create new label</span>
-          </li>
-        </ul>
+          </SideNavList>
+        </SideNavContainer>
       </div>
-      <div className="meet">
-        <p>Meet</p>
+      <Meet className="meet">
+        <MeetText>Meet</MeetText>
         <ul>
-          <li>
+          <SideNavList>
             <span className="icon">
-              <img
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/videocam_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">New meeting</span>
-          </li>
-          <li>
+          </SideNavList>
+          <SideNavList>
             <span className="icon">
-              <img
+              <ListImg
                 src="https://www.gstatic.com/images/icons/material/system/1x/keyboard_black_20dp.png"
                 alt="inbox"
               />
             </span>
             <span className="title">Join a meeting</span>
-          </li>
+          </SideNavList>
         </ul>
-      </div>
-      <div className="hangout">
-        <p>Hangouts</p>
-        <div className="hangout-flex">
-          <span className="T">
+      </Meet>
+      <Hangout>
+        <HangoutText>Hangouts</HangoutText>
+        <HangoutFlex>
+          <CapitalT>
             <div>T</div>
-          </span>
-          <span className="name">Tobiloba</span>
-          <span className="arrow-down">
+          </CapitalT>
+          <HangoutName>Tobiloba</HangoutName>
+          <HangoutArrow>
             <i className="fas fa-sort-down"></i>
-          </span>
-          <span className="cross">
+          </HangoutArrow>
+          <HangoutCross>
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/add_grey600_24dp.png"
               alt="icon"
             />
-          </span>
-        </div>
-      </div>
-    </div>
+          </HangoutCross>
+        </HangoutFlex>
+      </Hangout>
+    </SidebarContainer>
   );
 };
 

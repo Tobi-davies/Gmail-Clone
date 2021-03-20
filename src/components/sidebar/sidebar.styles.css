@@ -1,4 +1,4 @@
-.bar {
+/* .bar {
   width: 24px;
   color: #5f6368;
 }
@@ -57,9 +57,7 @@
 .options-list ul li:hover {
   background-color: #f1f3f4de;
 }
-/* .options-list ul li span img {
-  background-blend-mode: lighten;
-} */
+
 .red-highlight {
   color: #d93025 !important;
   background: #fceae9;
@@ -85,13 +83,7 @@
 .red-highlight span img {
   opacity: 1 !important;
 }
-/* .manage-icon {
-  height: 20px;
-  width: 20px;
-  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/settings_black_20dp.png");
 
-  
-} */
 
 .meet {
   border-bottom: 1px solid #f1f3f4;
@@ -145,4 +137,12 @@
   .sidebar {
     display: none;
   }
+} */
+
+/* .bar {
+  width: 24px;
+  color: #5f6368;
 }
+.logo {
+  display: flex;
+} */

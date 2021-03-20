@@ -2,6 +2,19 @@ import React from "react";
 import "./star-list.styles.css";
 import { connect } from "react-redux";
 import { removeStarred } from "../../redux/starred/starred.actions";
+import {
+  MessageTemplateContainer,
+  SquareBox,
+  Star,
+  HoverIcons,
+  MessageBody,
+  MessageBodyFirst,
+  MessageTitle,
+  MessageName,
+  MessageContent,
+  Dash,
+  Date,
+} from "../message-template/message-template.styles";
 
 const StarList = ({ starred, removeStarred }) => {
   const handleRemoval = () => {
@@ -9,11 +22,11 @@ const StarList = ({ starred, removeStarred }) => {
   };
 
   return (
-    <div className="star-list message-template">
-      <span className="square">
+    <MessageTemplateContainer>
+      <SquareBox className="square">
         <i className="far fa-square"></i>
-      </span>
-      <button className="star" onClick={handleRemoval}>
+      </SquareBox>
+      <Star className="star" onClick={handleRemoval}>
         {/* {!toggle ? (
               <img
                 src="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png"
@@ -28,20 +41,17 @@ const StarList = ({ starred, removeStarred }) => {
         <img
           src="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png"
           alt="star"
+          className="yellow"
         />
-      </button>
-      <p className="message-title">{starred.name}</p>
-      <div className="message-body">
-        <div className="message-body-first">
-          <span className="message-body-title">Message title</span>
-          <span className="dash">-</span>
-          <span className="message-body-content">
-            na him be this oh, I just dey try practice this wrap thing sef omo
-            oti fe ma stress aye me mehn, like wtf is going on....cant I just
-            blow with code
-          </span>
-        </div>
-        <div className="date-icons">
+      </Star>
+      <MessageName>{starred.name}</MessageName>
+      <MessageBody>
+        <MessageBodyFirst>
+          <MessageTitle>{starred.title}</MessageTitle>
+          <Dash>-</Dash>
+          <MessageContent>{starred.body}</MessageContent>
+        </MessageBodyFirst>
+        <HoverIcons className="date-icons">
           <img
             src="https://www.gstatic.com/images/icons/material/system/1x/archive_black_20dp.png"
             alt="download-icon"
@@ -58,10 +68,10 @@ const StarList = ({ starred, removeStarred }) => {
             src="https://www.gstatic.com/images/icons/material/system/1x/watch_later_black_20dp.png"
             alt="snooze-icon"
           />
-        </div>
-        <p className="date">26 Jan</p>
-      </div>
-    </div>
+        </HoverIcons>
+        <Date className="date">26 Jan</Date>
+      </MessageBody>
+    </MessageTemplateContainer>
   );
 };
 

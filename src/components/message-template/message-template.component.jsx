@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./message-template.styles.css";
 import { connect } from "react-redux";
 import { addStarred } from "../../redux/starred/starred.actions";
 import { createStructuredSelector } from "reselect";

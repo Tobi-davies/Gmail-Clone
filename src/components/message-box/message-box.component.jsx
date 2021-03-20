@@ -1,18 +1,25 @@
 import React, { useState } from "react";
-import "./message-box.styles.css";
+// import "./message-box.styles.css";
 import { connect } from "react-redux";
 import { addSent } from "../../redux/outbox/outbox.actions";
+import {
+  MessageBoxContainer,
+  MessageBoxTop,
+  MessageBoxTopText,
+  MessageBoxTopIcons,
+  MessageBoxForm,
+  MessageBoxInput,
+  MessageTextarea,
+  MessageBoxBottom,
+  MessageSendButton,
+  MessageSendButtonText,
+  MessageSendButtonIcon,
+  BottomLeftIcons,
+  BottomRight,
+  BottomRightIcons,
+} from "./message-box.styles";
 
 const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
-  // const [messageDetail, updateMessageDetail] = useState({
-  //   to: "",
-  //   subject: "",
-  //   body: "",
-  // });
-  // console.log(messageDetail);
-
-  // const { to, subject, body } = messageDetail;
-
   let monthList = [
     "Jan",
     "Feb",
@@ -41,20 +48,23 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
   let timeSent = `${month} ${date}`;
   // console.log(month);
 
-  const [receiver, setTo] = useState("");
-  const [topic, setSubject] = useState("");
-  const [content, setBody] = useState("");
+  const [messageDetail, updateMessageDetail] = useState({
+    to: "",
+    subject: "",
+    body: "",
+    month: timeSent,
+  });
 
-  const handleTo = (e) => {
-    setTo(e.target.value);
-  };
+  const { to, subject, body } = messageDetail;
 
-  const handleSubject = (e) => {
-    setSubject(e.target.value);
-  };
+  // const [receiver, setTo] = useState("");
+  // const [topic, setSubject] = useState("");
+  // const [content, setBody] = useState("");
 
-  const handleBody = (e) => {
-    setBody(e.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    updateMessageDetail({ ...messageDetail, [name]: value });
   };
 
   const handleSubmit = (e) => {
@@ -65,22 +75,24 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
     //   body: content,
     // });
 
-    const data = {
-      to: receiver,
-      subject: topic,
-      body: content,
-      month: timeSent,
-    };
+    // const data = {
+    //   to: receiver,
+    //   subject: topic,
+    //   body: content,
+    //   month: timeSent,
+    // };
 
-    addSent(data);
-
-    if (receiver !== "" && topic !== "" && content !== "") {
+    if (to !== "" && body !== "" && subject !== "") {
       shouldMessageShow(true);
+      addSent(messageDetail);
     }
 
-    setTo("");
-    setSubject("");
-    setBody("");
+    updateMessageDetail({
+      to: "",
+      subject: "",
+      body: "",
+      month: timeSent,
+    });
   };
 
   // const handleChange = (event) => {
@@ -91,126 +103,104 @@ const MessageBox = ({ showMessage, shouldMessageShow, addSent }) => {
 
   const handleClose = () => {
     shouldMessageShow(true);
+    updateMessageDetail({
+      to: "",
+      subject: "",
+      body: "",
+      month: timeSent,
+    });
   };
 
   return (
-    <div className={!showMessage ? "message-box display-box" : "message-box"}>
-      <div className="new-message-head">
-        <p>New Message</p>
-        <div className="new-message-icons">
+    <MessageBoxContainer showMessage={showMessage}>
+      <MessageBoxTop>
+        <MessageBoxTopText>New Message</MessageBoxTopText>
+        <MessageBoxTopIcons>
           <i className="fas fa-minus"></i>
           <i className="fas fa-expand-alt"></i>
           <i className="fas fa-times close" onClick={handleClose}></i>
-        </div>
-      </div>
-      <form className="inner" onSubmit={handleSubmit}>
-        <div className="to">
-          <input
-            type="text"
-            name="to"
-            value={receiver}
-            onChange={handleTo}
-            placeholder="To"
-            required
+        </MessageBoxTopIcons>
+      </MessageBoxTop>
+      <MessageBoxForm onSubmit={handleSubmit}>
+        <MessageBoxInput
+          type="text"
+          name="to"
+          value={to}
+          onChange={handleChange}
+          placeholder="To"
+          required
+        />
+        <MessageBoxInput
+          type="text"
+          name="subject"
+          value={subject}
+          onChange={handleChange}
+          placeholder="Subject"
+          required
+        />
+        <MessageTextarea
+          name="body"
+          value={body}
+          onChange={handleChange}
+          rows="15"
+          required
+        />
+
+        <MessageBoxBottom>
+          <MessageSendButton type="submit">
+            <MessageSendButtonText>Send</MessageSendButtonText>
+            <MessageSendButtonIcon>
+              <i className="fas fa-caret-down"></i>
+            </MessageSendButtonIcon>
+          </MessageSendButton>
+          <BottomLeftIcons
+            src="https://www.gstatic.com/images/icons/material/system/1x/text_format_black_20dp.png"
+            alt="icon"
           />
-        </div>
-        <div className="subject">
-          <input
-            type="text"
-            name="subject"
-            value={topic}
-            onChange={handleSubject}
-            placeholder="Subject"
-            required
+
+          <BottomLeftIcons
+            src="https://www.gstatic.com/images/icons/material/system/1x/attach_file_black_20dp.png"
+            alt="icon"
           />
-        </div>
-        <div className="message-body">
-          <textarea
-            name="body"
-            value={content}
-            onChange={handleBody}
-            rows="15"
-            required
-          ></textarea>
-        </div>
 
-        <div className="message-bottom">
-          <div className="send-btn">
-            <button type="submit">
-              <span className="send">Send</span>
-              <span className="send-icon">
-                <i className="fas fa-caret-down"></i>
-              </span>
-            </button>
-          </div>
-          <div className="message-icons">
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/text_format_black_20dp.png"
-                alt="icon"
-              />
-            </span>
+          <BottomLeftIcons
+            src="https://www.gstatic.com/images/icons/material/system/1x/insert_link_black_20dp.png"
+            alt="icon"
+          />
 
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/attach_file_black_20dp.png"
-                alt="icon"
-              />
-            </span>
+          <BottomLeftIcons
+            src="https://www.gstatic.com/images/icons/material/system/1x/insert_emoticon_black_20dp.png"
+            alt="icon"
+          />
 
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/insert_link_black_20dp.png"
-                alt="icon"
-              />
-            </span>
+          <BottomLeftIcons
+            src="https://www.gstatic.com/images/icons/material/system/1x/drive_black_20dp.png"
+            alt="icon"
+          />
 
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/insert_emoticon_black_20dp.png"
-                alt="icon"
-              />
-            </span>
+          <BottomLeftIcons
+            src="https://www.gstatic.com/images/icons/material/system/1x/insert_photo_black_20dp.png"
+            alt="icon"
+          />
 
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/drive_black_20dp.png"
-                alt="icon"
-              />
-            </span>
+          <BottomLeftIcons
+            src="https://www.gstatic.com/images/icons/material/system/1x/lock_clock_black_20dp.png"
+            alt="icon"
+          />
+          <BottomRight>
+            <BottomRightIcons
+              src="https://www.gstatic.com/images/icons/material/system/1x/more_vert_black_20dp.png"
+              alt="icon"
+            />
 
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/insert_photo_black_20dp.png"
-                alt="icon"
-              />
-            </span>
-
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/lock_clock_black_20dp.png"
-                alt="icon"
-              />
-            </span>
-          </div>
-          <div className="right-icon">
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/more_vert_black_20dp.png"
-                alt="icon"
-              />
-            </span>
-
-            <span>
-              <img
-                src="https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png"
-                alt="icon"
-              />
-            </span>
-          </div>
-        </div>
-      </form>
-    </div>
+            <BottomRightIcons
+              src="https://www.gstatic.com/images/icons/material/system/1x/delete_black_20dp.png"
+              alt="icon"
+            />
+          </BottomRight>
+        </MessageBoxBottom>
+      </MessageBoxForm>
+    </MessageBoxContainer>
   );
 };
 

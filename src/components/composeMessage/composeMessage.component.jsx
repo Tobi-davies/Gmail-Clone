@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./composeMessage.styles.css";
+// import "./composeMessage.styles.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiPaperclip } from "react-icons/bi";
 import { BiSend } from "react-icons/bi";
@@ -7,6 +7,19 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link, withRouter } from "react-router-dom";
 import { addSent } from "../../redux/outbox/outbox.actions";
 import { connect } from "react-redux";
+import {
+  ComposeContainer,
+  TopLinks,
+  TopLinksLeft,
+  TopText,
+  TopLinksRight,
+  MessageSection,
+  MessageInputContainer,
+  MessageInput,
+  MessageInputText,
+  SubjectInput,
+  Body,
+} from "./composeMessage.styles";
 
 const ComposeMessage = ({ addSent, history, match }) => {
   let monthList = [
@@ -62,37 +75,37 @@ const ComposeMessage = ({ addSent, history, match }) => {
   };
 
   return (
-    <div className="compose-message">
-      <div className="top-links">
-        <div className="top-links-left">
+    <ComposeContainer>
+      <TopLinks>
+        <TopLinksLeft>
           <Link to="/">
             <AiOutlineArrowLeft className="compose-icon" />
           </Link>
-          <p>Compose</p>
-        </div>
-        <div className="top-links-right">
-          <BiPaperclip className="compose-icon" />
-          <BiSend className="compose-icon" onClick={handleSubmit} />
-          <BsThreeDotsVertical className="compose-icon" />
-        </div>
-      </div>
-      <form className="compose-message-body">
-        <div className="from-container">
-          <input type="text" className="from-input" />
-          <p>From</p>
-        </div>
-        <div className="to-container">
-          <input
+          <TopText>Compose</TopText>
+        </TopLinksLeft>
+        <TopLinksRight>
+          <BiPaperclip className="compose-icon right" />
+          <BiSend className="compose-icon right" onClick={handleSubmit} />
+          <BsThreeDotsVertical className="compose-icon right" />
+        </TopLinksRight>
+      </TopLinks>
+      <MessageSection>
+        <MessageInputContainer>
+          <MessageInput type="text" className="from-input" />
+          <MessageInputText>From</MessageInputText>
+        </MessageInputContainer>
+        <MessageInputContainer>
+          <MessageInput
             type="text"
             className="to-input"
             name="to"
             value={to}
             onChange={handleChange}
           />
-          <p>To</p>
-        </div>
-        <div className="subject-container">
-          <input
+          <MessageInputText>To</MessageInputText>
+        </MessageInputContainer>
+        <MessageInputContainer>
+          <SubjectInput
             type="text"
             name="subject"
             value={subject}
@@ -101,16 +114,16 @@ const ComposeMessage = ({ addSent, history, match }) => {
             placeholder="Subject"
             required
           />
-        </div>
-        <textarea
+        </MessageInputContainer>
+        <Body
           name="body"
           value={body}
           onChange={handleChange}
           placeholder="Compose email"
           required
-        ></textarea>
-      </form>
-    </div>
+        />
+      </MessageSection>
+    </ComposeContainer>
   );
 };
 

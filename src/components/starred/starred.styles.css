@@ -1,8 +1,7 @@
-.starred {
+/* .starred {
   width: 100%;
   margin-top: 49px;
 
-  /* border: 2px solid green; */
 }
 .starred .no-item {
   display: flex;
@@ -27,4 +26,4 @@
     padding: 5px 15px 0 20px;
     font-size: 0.9rem;
   }
-}
+} */

@@ -1,13 +1,26 @@
 import React from "react";
-import "./sent-messages.styles.css";
+// import "./sent-messages.styles.css";
+import {
+  MessageTemplateContainer,
+  SquareBox,
+  Star,
+  HoverIcons,
+  MessageBody,
+  MessageBodyFirst,
+  MessageTitle,
+  MessageName,
+  MessageContent,
+  Dash,
+  Date,
+} from "../message-template/message-template.styles";
 
 const SentMessages = ({ item }) => {
   return (
-    <div className="message-template message-list">
-      <span className="square">
+    <MessageTemplateContainer>
+      <SquareBox className="square">
         <i className="far fa-square"></i>
-      </span>
-      <button className="star">
+      </SquareBox>
+      <Star className="star">
         {/* {!toggle ? (
           <img
             src="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png"
@@ -19,17 +32,17 @@ const SentMessages = ({ item }) => {
             alt="star"
           />
         )} */}
-        <i className="far fa-star"></i>
-      </button>
-      <p className="message-title">{item.to}</p>
+        <i className="far fa-star dark"></i>
+      </Star>
+      <MessageName>{item.to}</MessageName>
 
-      <div className="message-body">
-        <div className="message-body-first">
-          <span className="message-body-title">{item.subject}</span>
-          <span className="dash">-</span>
-          <span className="message-body-content">{item.body}</span>
-        </div>
-        <div className="date-icons">
+      <MessageBody>
+        <MessageBodyFirst>
+          <MessageTitle>{item.subject}</MessageTitle>
+          <Dash>-</Dash>
+          <MessageContent>{item.body}</MessageContent>
+        </MessageBodyFirst>
+        <HoverIcons className="date-icons">
           <img
             src="https://www.gstatic.com/images/icons/material/system/1x/archive_black_20dp.png"
             alt="download-icon"
@@ -46,15 +59,15 @@ const SentMessages = ({ item }) => {
             src="https://www.gstatic.com/images/icons/material/system/1x/watch_later_black_20dp.png"
             alt="snooze-icon"
           />
-        </div>
-        <p className="date">{item.month}</p>
+        </HoverIcons>
+        <Date className="date">{item.month}</Date>
         {/* <p className="message-title">To: {item.to}</p>
       <p className="message-body">
         {item.subject} - {item.body}
       </p>
       <p className="date">{item.month}</p>  */}
-      </div>
-    </div>
+      </MessageBody>
+    </MessageTemplateContainer>
   );
 };
 

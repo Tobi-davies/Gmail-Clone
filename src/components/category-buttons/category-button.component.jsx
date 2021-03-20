@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./category-button.styles.css";
 import {
   changePage,
   hidePromo,
@@ -11,6 +10,20 @@ import {
 } from "../../redux/paginate/paginate.selectors";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import {
+  BottomBorder1,
+  BottomBorder2,
+  BottomBorder3,
+  CategoryButtonContainer,
+  CategoryButton1,
+  CategoryButton2,
+  CategoryButton3,
+  ButtonImageContainer,
+  ButtonInfo,
+  ButtonInfoTop,
+  ButtonInfoBottom,
+  ButtonInfoTitle,
+} from "./category-buttons.styles";
 
 const CategoryBtn = ({
   changePage,
@@ -39,12 +52,9 @@ const CategoryBtn = ({
   };
 
   return (
-    <div className="category-btn">
-      <button
-        className={color === "red" ? "button button1" : "button button1 blank"}
-        onClick={handleChange1}
-      >
-        <div className="btn-img">
+    <CategoryButtonContainer>
+      <CategoryButton1 color={color} onClick={handleChange1}>
+        <ButtonImageContainer>
           {color === "red" ? (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/inbox_gm_googlered600_20dp.png"
@@ -57,15 +67,12 @@ const CategoryBtn = ({
               className="dull"
             />
           )}
-        </div>
+        </ButtonImageContainer>
         <p>Primary</p>
-        <div className="border-red"></div>
-      </button>
-      <button
-        className={color === "blue" ? "button button2 blue" : "button button2"}
-        onClick={handleChange2}
-      >
-        <div className="btn-img">
+        <BottomBorder1 color={color}></BottomBorder1>
+      </CategoryButton1>
+      <CategoryButton2 color={color} onClick={handleChange2}>
+        <ButtonImageContainer>
           {color === "blue" ? (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/people_gm_blue600_20dp.png"
@@ -78,32 +85,27 @@ const CategoryBtn = ({
               className="dull"
             />
           )}
-        </div>
+        </ButtonImageContainer>
 
-        <div className="btn-info">
-          <div className="top">
-            <p className="title">Social</p>
-            <p
-              className={
-                selectSocial ? "new new-social" : "new new-social disappear"
-              }
+        <ButtonInfo>
+          <ButtonInfoTop>
+            <p>Social</p>
+            <ButtonInfoTitle
+              className={selectSocial ? "new-social" : "new-social disappear"}
             >
               2 new
-            </p>
-          </div>
-          <div className={selectSocial ? "bottom" : "new bottom disappear"}>
+            </ButtonInfoTitle>
+          </ButtonInfoTop>
+          <ButtonInfoBottom
+            className={selectSocial ? "new-social" : "new-social disappear"}
+          >
             Twitter, LinkedIn
-          </div>
-        </div>
-        <div className="border-blue"></div>
-      </button>
-      <button
-        className={
-          color === "green" ? "button button3 green" : "button3 button"
-        }
-        onClick={handleChange3}
-      >
-        <div className="btn-img">
+          </ButtonInfoBottom>
+        </ButtonInfo>
+        <BottomBorder2 color={color}></BottomBorder2>
+      </CategoryButton2>
+      <CategoryButton3 color={color} onClick={handleChange3}>
+        <ButtonImageContainer>
           {color === "green" ? (
             <img
               src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_gm_green700_20dp.png"
@@ -116,25 +118,25 @@ const CategoryBtn = ({
               className="dull"
             />
           )}
-        </div>
-        <div className="btn-info">
-          <div className="top">
-            <p className={selectPromo ? "title promotion-title" : "title"}>
-              Promotions
-            </p>
-            <p
-              className={selectPromo ? "new new-promo" : "new new-promo clear"}
+        </ButtonImageContainer>
+        <ButtonInfo>
+          <ButtonInfoTop>
+            <p className={selectPromo ? "promotion-title" : ""}>Promotions</p>
+            <ButtonInfoTitle
+              className={selectPromo ? "new-promo" : "clear new-promo"}
             >
               1 new
-            </p>
-          </div>
-          <div className={selectPromo ? "bottom" : "new bottom clear"}>
+            </ButtonInfoTitle>
+          </ButtonInfoTop>
+          <ButtonInfoBottom
+            className={selectPromo ? "new-promo" : "new-promo clear"}
+          >
             Udemy
-          </div>
-        </div>
-        <div className="border-green"></div>
-      </button>
-    </div>
+          </ButtonInfoBottom>
+        </ButtonInfo>
+        <BottomBorder3 color={color}></BottomBorder3>
+      </CategoryButton3>
+    </CategoryButtonContainer>
   );
 };
 

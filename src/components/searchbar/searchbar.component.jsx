@@ -1,37 +1,49 @@
 import React from "react";
-import "./searchbar.styles.css";
+import {
+  Logo,
+  SearchHeader,
+  Search,
+  HeaderSearchInput,
+  HeaderSearchIcon,
+  HeaderArrowIcon,
+  HeaderRightIcons,
+  PersonIcon,
+} from "./searchbar.styles";
+// import "./searchbar.styles.css";
 
 const Header = () => {
   return (
-    <div className="header">
-      <div className="logo">
+    <SearchHeader>
+      <Logo>
         <svg className="bar" focusable="false" viewBox="0 0 24 24">
-          <path
-            className="bar-line"
-            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-          ></path>
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
         </svg>
-        <div className="gmail-logo">
+        <div>
           <img
             className="gb_uc"
             src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png"
             // srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png 2x "
             alt="logo"
-            // aria-hidden="true"
+            aria-hidden="true"
             // style="width:109px;height:40px"
           />
         </div>
-      </div>
-      <div className="input-field">
-        <input type="text" name="input" placeholder="Search Gmail" id="input" />
-        <span className="search-icon">
+      </Logo>
+      <Search>
+        <HeaderSearchInput
+          type="text"
+          name="input"
+          placeholder="Search mail"
+          id="input"
+        />
+        <HeaderSearchIcon>
           <i className="fas fa-search"></i>
-        </span>
-        <span className="arrow-down">
+        </HeaderSearchIcon>
+        <HeaderArrowIcon>
           <i className="fas fa-sort-down"></i>
-        </span>
-      </div>
-      <div className="marks">
+        </HeaderArrowIcon>
+      </Search>
+      <HeaderRightIcons>
         <span>
           <svg
             className="t7 grey"
@@ -63,11 +75,9 @@ const Header = () => {
             <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
           </svg>
         </span>
-        <span className="T">
-          <div>T</div>
-        </span>
-      </div>
-    </div>
+        <PersonIcon>T</PersonIcon>
+      </HeaderRightIcons>
+    </SearchHeader>
   );
 };
 

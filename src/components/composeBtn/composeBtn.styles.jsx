@@ -1,9 +1,9 @@
-.mobile-compose-btn {
-  display: none;
-}
+import styled from "styled-components";
 
-@media screen and (max-width: 650px) {
-  .mobile-compose-btn {
+export const MobileComposeBtn = styled.button`
+  display: none;
+
+  @media screen and (max-width: 650px) {
     position: fixed;
     display: flex;
     align-items: center;
@@ -16,4 +16,4 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
     padding: 10px;
   }
-}
+`;
