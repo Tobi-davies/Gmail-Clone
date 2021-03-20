@@ -83,6 +83,7 @@ const NAME_DATA = [
     title: "Slack account sign in from a new device",
     body:
       "Slack account sign in from a new browser. If this was you, you are all set",
+    date: "Jan 17",
   },
   {
     id: 12,
