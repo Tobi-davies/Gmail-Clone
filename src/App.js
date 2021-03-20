@@ -16,7 +16,6 @@ import ComposeMessage from "./components/composeMessage/composeMessage.component
 
 function App({ location }) {
   const [messageBox, showMessageBox] = useState(true);
-
   const [mobileNav, showMobileNav] = useState(false);
 
   return (
