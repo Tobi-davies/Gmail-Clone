@@ -1,5 +1,4 @@
 import React from "react";
-// import "./starred.styles.css";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectStarredList } from "../../redux/starred/starred.selectors";
@@ -7,8 +6,6 @@ import StarList from "../star-list/star-list.component";
 import { StarredContainer, NoItem, StarredHeading } from "./starred.styles";
 
 const Starred = ({ starredItems }) => {
-  // console.log(starredItems.length);
-
   return (
     <StarredContainer>
       {starredItems.length > 0 ? (
@@ -21,9 +18,6 @@ const Starred = ({ starredItems }) => {
       ) : (
         <NoItem>Nothing In starred</NoItem>
       )}
-      {/* {starredItems.map((starred, index) => (
-        <StarList key={index} starred={starred} />
-      ))} */}
     </StarredContainer>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-// import "./sent-messages.styles.css";
 import {
   MessageTemplateContainer,
   SquareBox,

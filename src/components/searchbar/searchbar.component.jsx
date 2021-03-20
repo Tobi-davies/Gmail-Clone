@@ -9,7 +9,6 @@ import {
   HeaderRightIcons,
   PersonIcon,
 } from "./searchbar.styles";
-// import "./searchbar.styles.css";
 
 const Header = () => {
   return (

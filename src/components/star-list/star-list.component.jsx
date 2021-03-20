@@ -1,5 +1,5 @@
 import React from "react";
-import "./star-list.styles.css";
+// import "./star-list.styles.css";
 import { connect } from "react-redux";
 import { removeStarred } from "../../redux/starred/starred.actions";
 import {

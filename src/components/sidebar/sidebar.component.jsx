@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./sidebar.styles.css";
 import { Link } from "react-router-dom";
 import {
   SidebarContainer,
