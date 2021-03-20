@@ -27,6 +27,7 @@ function App({ location }) {
       <MobileNav mobileNav={mobileNav} showMobileNav={showMobileNav} />
 
       <div className="middle">
+        <div className={mobileNav ? "overlay" : "takeoff"} />
         <TopLine />
         {location.pathname !== "/compose" ? (
           <MobileSearchbar showMobileNav={showMobileNav} />

@@ -11,6 +11,21 @@ button {
 /* body {
   overflow: hidden;
 } */
+
+.overlay {
+  background: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  transition: 1s all ease;
+}
+.takeoff {
+  background: none;
+}
+
 .middle {
   position: absolute;
   top: 63px;
