@@ -31,6 +31,11 @@ button {
     right: 0;
   }
 }
+@media (max-width: 700px) {
+  .middle {
+    left: 200px;
+  }
+}
 @media (max-width: 650px) {
   .middle {
     /* right: 0; */
