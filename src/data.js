@@ -133,11 +133,10 @@ const NAME_DATA = [
   },
   {
     id: 18,
-    name: "LinkedIn Welcome Team",
-    title:
-      "Take your conversations with you. Be notified when you get a reply.",
+    name: "Twitter",
+    title: "Twitter account sign in from a new device",
     body:
-      "Try linkedIn's free app, Build relationships that advance your career",
+      "Twitter account sign in from a new browser. If this was you, you are all set",
     date: "Feb 14",
   },
   {
@@ -255,18 +254,18 @@ const NAME_DATA = [
   },
   {
     id: 34,
-    name: "Twitter",
-    title: "Twitter account sign in from a new device",
+    name: "LinkedIn Welcome Team",
+    title:
+      "Take your conversations with you. Be notified when you get a reply.",
     body:
-      "Twitter account sign in from a new browser. If this was you, you are all set",
+      "Try linkedIn's free app, Build relationships that advance your career",
     date: "9/29/20",
   },
   {
     id: 35,
-    name: "Codecademy",
-    title: "New Career Paths. New career possibilities",
-    body:
-      "Fast-track your learning with new paths for Data Analysis and Data Science",
+    name: "Udemy",
+    title: "Enjoy your free course? Then you’ll probably love this.",
+    body: "See the difference our full learning experience gives",
     date: "Feb 12",
   },
   {
@@ -379,6 +378,14 @@ const NAME_DATA = [
     title: "100% DATA BONUS OFFER - ONLINE Renewal",
     body: "ENJOY MORE! Renew your account ONLINE TODAY and get 100% bonus",
     date: "9/28/20",
+  },
+  {
+    id: 51,
+    name: "Codecademy",
+    title: "New Career Paths. New career possibilities",
+    body:
+      "Fast-track your learning with new paths for Data Analysis and Data Science",
+    date: "Feb 12",
   },
 ];
 
