@@ -13,6 +13,7 @@ import {
   MiddleContainer,
   MiddleLink,
   MiddleLinkImg,
+  Number,
 } from "./mobile-nav.styles";
 
 const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
@@ -215,7 +216,7 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
               />
             </span>
             <span className="title">Drafts</span>
-            <span className="number">20</span>
+            <Number>20</Number>
           </MiddleLink>
 
           <MiddleLink
@@ -258,7 +259,7 @@ const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
               />
             </span>
             <span className="title">Spam</span>
-            <span className="number">2</span>
+            <Number>2</Number>
           </MiddleLink>
 
           <MiddleLink

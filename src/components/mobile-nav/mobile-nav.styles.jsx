@@ -104,3 +104,8 @@ export const MiddleLinkImg = styled.img`
   margin-right: 15px;
   width: 1.55rem;
 `;
+
+export const Number = styled.span`
+  margin-left: auto;
+  padding-right: 10px;
+`;
