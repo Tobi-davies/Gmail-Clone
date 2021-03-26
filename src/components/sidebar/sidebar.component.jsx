@@ -53,7 +53,7 @@ const SideBar = ({ shouldMessageShow }) => {
                 )}
               </span>
               <span className="title">Inbox</span>
-              <span className="number">661</span>
+              <span className="number">71</span>
             </SideNavList>
           </Link>
           <Link to="/starred">
