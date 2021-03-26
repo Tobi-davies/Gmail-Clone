@@ -11,7 +11,7 @@ export const TopLineContainer = styled.div`
   background: #fff;
   border-bottom: 1px solid #f1f3f4;
   font-family: "Roboto", sans-serif;
-  z-index: 1;
+  z-index: 3;
 
   @media screen and (max-width: 850px) {
     left: 230px;

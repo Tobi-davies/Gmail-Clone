@@ -45,7 +45,7 @@ function App({ location }) {
       </div>
       <Route path="/compose" component={ComposeMessage} />
 
-      {location.pathname !== "/compose" ? <ComposeBtn /> : ""}
+      {location.pathname !== "/compose" ? <ComposeBtn className="btn" /> : ""}
     </div>
   );
 }

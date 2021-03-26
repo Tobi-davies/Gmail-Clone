@@ -7,7 +7,7 @@ export const SearchHeader = styled.div`
   border-bottom: 1px solid #f1f3f4;
   font-family: "Poppins", sans-serif;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   background: #fff;
 
   @media (max-width: 650px) {
@@ -50,6 +50,7 @@ export const HeaderSearchInput = styled.input`
   background: #f1f3f4;
   border-radius: 9px;
   border: none;
+  outline: none;
   font-size: 0.9rem;
 `;
 

@@ -12,7 +12,6 @@ const InboxContent = ({ changePage, currentMessages }) => {
   useEffect(() => {
     changePage(1);
   }, [changePage]);
-  // console.log(currentMessages);
 
   return (
     <InboxContainer>

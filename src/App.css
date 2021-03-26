@@ -16,7 +16,7 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
   transition: 1s all ease;
 }
 .takeoff {
@@ -53,8 +53,13 @@ button {
     left: 0;
     top: 0;
   }
-  .Hide-app {
-    overflow-y: hidden;
+  /* .Hide-app {
+    position: fixed;
+  } */
+
+  .Hide-app .middle {
+    position: fixed;
+    z-index: 3;
   }
 }
 

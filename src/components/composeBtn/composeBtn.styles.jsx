@@ -15,5 +15,7 @@ export const MobileComposeBtn = styled.button`
     border: none;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
     padding: 10px;
+    z-index: 2;
+    transition: 1s all ease;
   }
 `;

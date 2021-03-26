@@ -17,6 +17,7 @@ export const NoItem = styled.p`
   font-size: 1.5rem;
   color: rgb(116, 116, 116);
   font-family: "Roboto", sans-serif;
+  font-weight: 500;
 `;
 
 export const StarredHeading = styled.h4`

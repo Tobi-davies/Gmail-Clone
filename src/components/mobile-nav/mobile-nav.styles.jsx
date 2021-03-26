@@ -57,7 +57,7 @@ export const Nav = styled.div`
 
 export const MobileLogo = styled.p`
   color: #d93025;
-  padding: 10px;
+  padding: 23px 10px 10px 16px;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   border-bottom: 1px solid #f1f3f4;

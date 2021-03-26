@@ -19,7 +19,7 @@ import {
 const MobileNav = ({ mobileNav, showMobileNav, changePage }) => {
   const [hightlight, setHighlight] = useState("primary");
   const navRef = useRef();
-  console.log(mobileNav);
+  // console.log(mobileNav);
 
   //nav action when clicked outside
   const useOnOutsideClick = (navRef, navAction) => {
