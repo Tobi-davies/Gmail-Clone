@@ -5,10 +5,11 @@ const InputStyle = css`
   border: none;
   border-bottom: 2px solid #f1f3f4;
   width: 100%;
-  padding-left: 60px;
+  padding-left: 70px;
   font-family: "Roboto", sans-serif;
   outline: none;
   font-size: 16px;
+  padding-top: 3px;
 `;
 
 export const ComposeContainer = styled.div`
@@ -68,8 +69,11 @@ export const MessageInputContainer = styled.div`
 
 export const MessageInputText = styled.p`
   position: absolute;
-  top: 30%;
+  top: 0%;
   left: 5%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;
 
 export const SubjectInput = styled.input`
